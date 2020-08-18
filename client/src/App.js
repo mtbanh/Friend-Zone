@@ -9,6 +9,7 @@ import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Friends from "./pages/Friends";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
