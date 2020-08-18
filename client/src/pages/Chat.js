@@ -8,6 +8,7 @@ const Chat = () => {
     const [userName, setUserName] = useState(0);
     var [transactions, setTransactions] = useState([])
     const [chatId, setChatId] = useState(0)
+    const [showChat, setShowChat] = useState(false)
 
     useEffect(() => {
         if (!loadChats()) { console.log("Nothing to see here") }
@@ -43,6 +44,7 @@ const Chat = () => {
         loadTransactions(temp)
         setChatId(temp);
         setFriendName(event.target.getAttribute("data-name"))
+        setShowChat(true)
     }
 
     function sendChatTransaction(event) {
@@ -69,11 +71,10 @@ const Chat = () => {
                     })}
                 </ul>
                 <div className="row">
-                    <h3 className = "col-md-12">Chat with: {friendName}</h3>
+                    <h3 style={{ display: showChat ? "block" : "none" }} className = "col-md-12">Chat with: {friendName}</h3>
                     <div className="col-md-8" style = {{height: "300px", overflow: "scroll"}}>
                     {transactions.map(tran => {
-                        {console.log(tran)
-                            console.log(userName)
+                        {
                             if(tran.userID == userName){
                             return (
                                 <div className = "card">
@@ -91,7 +92,7 @@ const Chat = () => {
                         
                     })}
                     </div>
-                    <form onSubmit = {sendChatTransaction}>
+                    <form style={{ display: showChat ? "block" : "none" }} onSubmit = {sendChatTransaction}>
                         <input type="text" className="form-control" placeholder="Enter a chat"></input>
                         <button className="btn btn-outline-secondary" type="submit">Send</button>
                     </form>
