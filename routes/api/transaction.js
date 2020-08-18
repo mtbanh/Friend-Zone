@@ -6,4 +6,7 @@ router
   .get(chatTransactionController.findAll)
   .post(chatTransactionController.create);
 
+router
+  .route("/:chatId")
+  .get(chatTransactionController.findById)
 module.exports = router;
