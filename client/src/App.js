@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./Components/Navbar"
 import Chat from "./pages/Chat";
-import Landing from "./pages/Landing";
+import Landing from "./pages/landing";
 import NoMatch from "./pages/NoMatch";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
@@ -19,10 +19,10 @@ function App() {
           <Route exact path={["/", "/landing"]}>
             <Landing />
           </Route>
-          {/* <Route exact path="/signin">
+          <Route exact path="/signin">
             <Signin />
           </Route>
-          <Route exact path="/signup">
+          {/* <Route exact path="/signup">
             <Signup />
           </Route>
           <Route exact path="/home">
