@@ -2,7 +2,7 @@
     --input-padding-x: 1.5rem;
     --input-padding-y: 0.75rem;
   }
-  
+
   .login,
   .image {
     min-height: 100vh;
@@ -10,8 +10,8 @@
     color: white;
   }
   
-  .bg-image {
-    background-image: url('../assets/img/signin-bg.jpg');
+  .bg-image-reg {
+    background-image: url('../assets/img/registration-bg.jpg');
     background-size: cover;
     background-position: center;
   }

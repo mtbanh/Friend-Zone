@@ -1,8 +1,8 @@
 import React from "react";
-import "./signin.css";
+import "./login.css";
 
 
-const Signin = () => {
+const Login = () => {
     return (
         <div class="container-fluid">
             <div class="row no-gutter">
@@ -30,7 +30,8 @@ const Signin = () => {
                                         </div>
                                         <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold coderatings-button mb-2" type="submit">Sign in</button>
                                         <div class="text-center">
-                                            <a class="small" href="#">Forgot password?</a></div>
+                                            <a class="small" href="#">Forgot password?</a> <a class="small" href="#">Create an account?</a></div>
+                                        
                                     </form>
                                 </div>
                             </div>
@@ -42,4 +43,4 @@ const Signin = () => {
     )
 };
 
-export default Signin
+export default Login;
