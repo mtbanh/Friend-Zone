@@ -8,12 +8,11 @@ const Chat = () => {
     var [transactions, setTransactions] = useState([])
 
     useEffect(() => { 
-        loadTransactions()
         if (!loadChats()) { console.log("Nothing to see here") } 
     }, []);
 
-    function loadTransactions(){
-        API.getChatsTransaction()
+    function loadTransactions(id){
+        API.getChatsTransactionId(id)
         .then(res => {
             setTransactions(res.data)
         })
@@ -26,20 +25,25 @@ const Chat = () => {
             })
     };
     function handleClick() {
-        API.postChat({ user1: 1, user2: 3 })
+        API.postChat({ user1: 1, user2: 4 })
             .then(res => {
                 var newChat = chats
                 newChat.push(res.data)
                 setChats(newChat)
-                API.postChatTransaction({text: "Stuff", userID: 1, ChatId: res.data.id})
+                loadTransactions(res.data.id)
+                API.postChatTransaction({text: "new stuff", userID: 1, ChatId: res.data.id})
                     .then(res => {
-                        console.log(res.data)
+                        var newTran = transactions
+                        newTran.push(res.data)
+                        setTransactions(newTran)
                     })
                 window.location.reload(false);
             })
     }
 
     function displayChat(event) {
+        var temp = event.target.getAttribute("data-id");
+        loadTransactions(temp)
         setUserName(event.target.getAttribute("data-name"))
     }
 
@@ -50,12 +54,20 @@ const Chat = () => {
                 <ul className="list-group col-md-3">
                     {chats.map(chat => {
                         return (
-                            <li key={chat.id} onClick={displayChat} data-name = {chat.user1} className="list-group-item">Chat with user: {chat.user1}</li>
+                            <li key={chat.id} onClick={displayChat} data-id  = {chat.id} data-name = {chat.user2} className="list-group-item">Chat with user: {chat.user2}</li>
                         )
                     })}
                 </ul>
                 <div className = "row col-md-8">
                     <h3>Chat with: {userName}</h3>
+                    {transactions.map(tran => {
+                        return(
+                            <div>
+                                <br></br>
+                                <p key = {tran.id}>{tran.text}</p>
+                            </div>
+                        )
+                    })}
                     <input type="text" className="form-control" placeholder="Enter a chat" aria-label="Recipient's username" aria-describedby="button-addon2"></input>
                 </div>
             </div>
