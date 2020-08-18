@@ -2,7 +2,7 @@
   "name": "Friend-Zone",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -30,6 +30,8 @@
     "express": "^4.16.3",
     "if-env": "^1.0.4",
     "mysql2": "^2.1.0",
+    "react": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "sequelize": "^6.3.4"
   },
   "bugs": {
