@@ -11,7 +11,9 @@ export default {
   },
   getChatsTransaction: (chatTran)=>{
     return axios.get("api/chat-transaction", chatTran);
-  }
+  },
 
-  
+  postUser: (user)=>{
+    return axios.get("api/signup", user)
+  }
 }
