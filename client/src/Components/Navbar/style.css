@@ -1,0 +1,22 @@
+#brand{
+    color: white;
+}
+body, html \, #intro{
+    height: 100%;
+}
+#loginBtn{
+    background: #76B3FA;
+    border-radius: 100px;
+    padding: 10px 30px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    margin-left:auto;
+
+  
+}
+
+#loginBtn:hover {
+    -webkit-animation: hover 1200ms linear 2 alternate;
+    animation: hover 1200ms linear 2 alternate;
+}
