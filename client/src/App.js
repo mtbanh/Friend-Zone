@@ -1,25 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Chat from "./pages/Chat";
+import Landing from "./pages/Landing";
+import NoMatch from "./pages/NoMatch";
+import Signin from "./pages/Signin";
+import Signup from "./pages/Signup";
+import Home from "./pages/Home";
+import Friends from "./pages/Friends";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+        <Switch>
+          {/* <Route exact path={["/", "/landing"]}>
+            <Landing />
+          </Route>
+          <Route exact path="/signin">
+            <Signin />
+          </Route>
+          <Route exact path="/signup">
+            <Signup />
+          </Route>
+          <Route exact path="/home">
+            <Home />
+          </Route> */}
+          <Route exact path="/chat">
+            <Chat />
+          </Route>
+          {/* <Route exact path="/friends">
+            <Friends />
+          </Route> */}
+          <Route>
+            <NoMatch />
+          </Route>
+        </Switch>
+    </Router>
   );
 }
 
