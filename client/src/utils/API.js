@@ -12,4 +12,6 @@ export default {
   getChatsTransaction: (chatTran)=>{
     return axios.get("api/chat-transaction", chatTran);
   }
+
+  
 }
