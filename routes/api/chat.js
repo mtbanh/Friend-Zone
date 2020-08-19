@@ -7,4 +7,7 @@ router
   .get(chatController.findAll)
   .post(chatController.create);
 
+router
+  .route("/:id")
+  .get(chatController.getById)
 module.exports = router;
