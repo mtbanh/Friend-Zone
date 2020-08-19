@@ -5,8 +5,8 @@ import Nav from "./Components/Navbar"
 import Chat from "./pages/Chat";
 import Landing from "./pages/Landing";
 import NoMatch from "./pages/NoMatch";
-import Signin from "./pages/Signin";
-import Signup from "./pages/Signup";
+import Login from "./pages/Login";
+import Registration from "./pages/Registration";
 import Home from "./pages/Home";
 import Friends from "./pages/Friends";
 import Profile from "./pages/Profile";
@@ -21,13 +21,13 @@ function App() {
           <Route exact path={["/", "/landing"]}>
             <Landing />
           </Route>
-          {/* <Route exact path="/signin">
-            <Signin />
+          <Route exact path="/login">
+            <Login />
           </Route>
-          <Route exact path="/signup">
-            <Signup />
+          <Route exact path="/registration">
+            <Registration />
           </Route>
-          <Route exact path="/home">
+          {/* <Route exact path="/home">
             <Home />
           </Route> */}
           <Route exact path="/chat">
