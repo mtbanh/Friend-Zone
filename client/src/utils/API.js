@@ -17,7 +17,5 @@ export default {
   },
   getChatsTransactionId:  (chatId) =>  {
     return axios.get("api/chat-transaction/" + chatId);
-  }
-
-  
+  }  
 }

@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./Components/Navbar"
 import Chat from "./pages/Chat";
-import Landing from "./pages/landing";
+import Landing from "./pages/Landing";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
 import Registration from "./pages/Registration";
