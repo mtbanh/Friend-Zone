@@ -1,4 +1,5 @@
 import React from "react";
+import "./ProfileStyle.css"
 
 
 const Profile = () => {
@@ -6,14 +7,24 @@ const Profile = () => {
         <div className="container">
             <h1>Profile</h1>    
         <hr></hr>
-        <div className="col-md-3">
-            <div className= "text-center">
-            {/* <input type="file" onChange={this.fileChangedHandler}> <button onClick={this.uploadHandler}>Upload!</button> </input> */}
-                <img src= {URL ("//placehold.it/100")} className="avatar img-circle" alt ="avater"></img> */}
-                 <h6>Upload photo</h6> 
-                <input type= "file" className= "form-control"></input>
-            </div>
-        </div>
+        <div className="input-group">
+  <div className="input-group-prepend">
+    <span className="input-group-text" id="inputGroupFileAddon01">
+      Upload
+    </span>
+  </div>
+  <div className="custom-file">
+    <input
+      type="file"
+      className="custom-file-input"
+      id="inputGroupFile01"
+      aria-describedby="inputGroupFileAddon01"
+    />
+    <label className="custom-file-label" htmlFor="inputGroupFile01">
+      Choose file
+    </label>
+  </div>
+</div>
 {/* alert pop up when its been created */}
 <div className= "col-md-9 profile-info">
 <div className="alert alert-info alert-dismissable">
@@ -35,6 +46,12 @@ const Profile = () => {
               <input className="form-control" type="text" value="Bacon"></input>
             </div>
           </div>
+          <div className="form-group">
+            <label className="col-lg-3 control-label">Age:</label>
+            <div className="col-lg-8">
+              <input className="form-control" type="text" value="25"></input>
+            </div>
+          </div>        
           <div className="form-group">
             <label className="col-lg-3 control-label">Hobby:</label>
             <div className="col-lg-8">

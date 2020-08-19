@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./landingStyle.css";
+import "./LandingStyle.css";
 
 
 const Landing = () => {
