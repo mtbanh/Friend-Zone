@@ -12,6 +12,16 @@ export default {
   postChatTransaction: (chatTran)=>{
     return axios.post("api/chat-transaction", chatTran);
   },
+  getChatsTransaction: (chatTran)=>{
+    return axios.get("api/chat-transaction", chatTran);
+  },
+  // Profile
+  postProfile: (profile) => {
+    return axios.post ("api/profile", profile);
+  },
+  getProfile: (profile) => {
+    return axios.get ("api/profile", profile);
+  },
   getChatsTransaction: ()=>{
     return axios.get("api/chat-transaction");
   },
