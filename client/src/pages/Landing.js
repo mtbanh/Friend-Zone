@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./LandingStyle.css";
+import SignupBtn from "../Components/SignupBtn"
 
 
 const Landing = () => {
@@ -12,9 +13,9 @@ const Landing = () => {
                         <hr class="hr-light" />
                     </div>
                 </div>
-                <div class="row">
-                    <button type="button" class="btn btn-primary btn-lg" id="SignupBtn">Sign-up</button>
-
+                <div class="row justify-content-center">
+                    {/* <button type="button" class="btn btn-primary btn-lg" id="SignupBtn">Sign-up</button> */}
+                <SignupBtn />
                 </div>
             </div>
         </div >
