@@ -1,13 +1,13 @@
 #loginBtn{
-    background: #76B3FA;
+    background: #1606f7;
     border-radius: 100px;
-    padding: 10px 30px;
+    padding: 10px 30px 10px ;
     color: #fff;
     text-decoration: none;
-    font-size: 1em;
-    margin-left:auto;
-
-  
+    font-size: 2em;
+    margin:auto;
+    margin-right: 20px;
+    margin-left: 50px
 }
 
 #loginBtn:hover {

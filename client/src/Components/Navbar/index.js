@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-import LoginBtn from "../LoginBtn"
+// import LoginBtn from "../LoginBtn"
 
 
 class Nav extends React.Component {
@@ -11,7 +11,7 @@ class Nav extends React.Component {
                     <img src="..\src\assets\img\logo.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy" />
                 FriendZone
               </a>
-              <LoginBtn />
+              {/* <LoginBtn /> */}
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

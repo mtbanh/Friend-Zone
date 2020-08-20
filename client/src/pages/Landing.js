@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./LandingStyle.css";
 import SignupBtn from "../Components/SignupBtn"
+import LoginBtn from "../Components/LoginBtn";
 
 
 const Landing = () => {
@@ -15,7 +16,7 @@ const Landing = () => {
                 </div>
                 <div class="row justify-content-center">
                     {/* <button type="button" class="btn btn-primary btn-lg" id="SignupBtn">Sign-up</button> */}
-                <SignupBtn />
+                <SignupBtn /> <LoginBtn />
                 </div>
             </div>
         </div >

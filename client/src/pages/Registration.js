@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from "react";
+import API from "../utils/API"
 
 import "./registration.css";
 
-const Registration = () => {
+const Register = () => {
     const [userProfileObj, setUserProfileObj] = useState({})
 
     const handleInputChange=(event)=>{
@@ -13,15 +14,18 @@ const Registration = () => {
     const handleFormSubmit=(event)=>{
         event.preventDefault();
         console.log(userProfileObj);
-        // if(userProfileObj.name && userProfileObj.email && userProfileObj.password){
-        //     API.createUser({
-        //         name: userProfileObj.name,
-        //         email: userProfileObj.email,
-        //         password: userProfileObj.password
-        //     })
-        //     .then()
-        //     .catch(err => console.log(err))
-        // }
+        if(userProfileObj.name && userProfileObj.email && userProfileObj.password){
+            API.createUser({
+                name: userProfileObj.name,
+                email: userProfileObj.email,
+                password: userProfileObj.password
+            })
+            .then(()=>{
+                console.log(`data passed to route`)
+                // window.location.replace("/home")
+            })
+            .catch(err => console.log(err))
+        }
     }
 
     return (
@@ -34,7 +38,7 @@ const Registration = () => {
                             <div class="row no-gutter">
                                 <div class="col-md-9 col-lg-8 mx-auto">
                                     <h3 class="login-heading mb-4">Ready to be in the Friend Zone?</h3>
-                                    <form class="needs-validation" novalidate>
+                                    <form >
                                         <div class="form-label-group">
                                             <span>Full Name</span>
                                             <input 
@@ -49,7 +53,7 @@ const Registration = () => {
                                         </div>
 
                                         <div class="form-label-group">
-                                            <span>Email</span>
+                                            <label for="inputEmail">Email address</label>
 
                                             <input 
                                             type="email"
@@ -101,4 +105,4 @@ const Registration = () => {
     )
 }
 
-export default Registration;
+export default Register;

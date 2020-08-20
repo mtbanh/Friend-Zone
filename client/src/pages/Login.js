@@ -15,7 +15,12 @@ const Login = () => {
                                     <h3 class="login-heading mb-4">Welcome back!</h3>
                                     <form>
                                         <div class="form-label-group">
-                                            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus />
+                                            <input 
+                                            type="email" 
+                                            id="inputEmail" 
+                                            class="form-control" 
+                                            placeholder="Email address" 
+                                            required autofocus />
                                             <label for="inputEmail">Email address</label>
                                         </div>
 

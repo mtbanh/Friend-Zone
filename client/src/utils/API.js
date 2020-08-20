@@ -19,7 +19,8 @@ export default {
     return axios.get("api/chat-transaction/" + chatId);
   },
 
-  postUser: ()=>{
-    return axios.get("api/signup")
+  createUser: (userData)=>{
+    return axios.post("/api/register", userData)
   }
+
 }

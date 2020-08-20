@@ -1,28 +1,9 @@
-const jwt = require("jsonwebtoken");
-const User = require("../../models/user");
-const config = require("../config.json");
 
-module.exports = function(req, res, next) {
-    if (!req.headers.authorization) {
-      return res.status(401).end();
-    }
-    const token = req.headers.authorization.split(" ")[1];
-    
-    return jwt.verify(token, config.jwtSecret, (err, decoded)=>{
-      if(err){
-        return res.status(401).end();
-      }
+module.exports = function (req, res, next) {
+  if (req.user) {
+    return next();
+  }
 
-      const userId = decoded.sub;
-
-      return User.findByID(userId, (userErr, user)=>{
-        if(userErr || !user){
-          return res.status(401).end();
-        }
-
-        req.user = user
-        return next();
-      })
-    })
-  };
-  
+  // If the user isn't logged in, redirect them to the login page
+  return res.redirect("/login");
+};
