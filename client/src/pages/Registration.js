@@ -22,7 +22,7 @@ const Register = () => {
             })
             .then(()=>{
                 console.log(`data passed to route`)
-                // window.location.replace("/home")
+                window.location.replace("/Profile")
             })
             .catch(err => console.log(err))
         }
