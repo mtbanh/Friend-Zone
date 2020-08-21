@@ -38,6 +38,7 @@
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "react": "^16.13.1",
+    "react-multi-carousel": "^2.5.5",
     "react-router-dom": "^5.2.0",
     "sequelize": "^6.3.4"
   },
