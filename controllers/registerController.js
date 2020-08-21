@@ -3,6 +3,7 @@ const passport = require("passport");
 
 module.exports = {
     createUser: (req, res) => {
+        console.log(req.body)
         db.User.create(req.body)
             .then(() => {
                 console.log(`User created`)
@@ -15,11 +16,12 @@ module.exports = {
     },
 
     findUser: (req, res) => {
-        passport.authenticate("local")
-            .then(() => next())
-            .catch(err => {
-                res.status(422).json(err)
-                console.log(`Error finding user`)
-            })
+        console.log(req.user)
+        // db.User.
+        //     .then(() => next())
+        //     .catch(err => {
+        //         res.status(422).json(err)
+        //         console.log(`Error finding user`)
+        //     })
     }
 }

@@ -1,8 +1,32 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import API from "../utils/API"
 import "./login.css";
 
 
 const Login = () => {
+    
+        const [userSigninObj, setUserSigninObj] = useState({})
+    
+        const handleInputChange=(event)=>{
+            const {name, value} = event.target;
+            setUserSigninObj({...userSigninObj, [name]: value})
+        };
+    
+        const handleFormSubmit=(event)=>{
+            event.preventDefault();
+            console.log(userSigninObj);
+            if(userSigninObj.email && userSigninObj.password){
+                API.findUser({
+                    username: userSigninObj.email,
+                    password: userSigninObj.password
+                })
+                .then(()=>{
+                    console.log(`data passed to route`)
+                    // window.location.replace("/Profile")
+                })
+                .catch(err => console.log(err))
+            }
+        }
     return (
         <div class="container-fluid">
             <div class="row no-gutter">
@@ -15,17 +39,19 @@ const Login = () => {
                                     <h3 class="login-heading mb-4">Welcome back!</h3>
                                     <form>
                                         <div class="form-label-group">
-                                            <input 
-                                            type="email" 
-                                            id="inputEmail" 
-                                            class="form-control" 
-                                            placeholder="Email address" 
-                                            required autofocus />
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                id="inputEmail"
+                                                class="form-control"
+                                                placeholder="Email address"
+                                                onChange = {handleInputChange}
+                                                required autofocus />
                                             <label for="inputEmail">Email address</label>
                                         </div>
 
                                         <div class="form-label-group">
-                                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required />
+                                            <input name="password" type="password" onChange={handleInputChange} id="inputPassword" class="form-control" placeholder="Password" required />
                                             <label for="inputPassword">Password</label>
                                         </div>
 
@@ -33,10 +59,15 @@ const Login = () => {
                                             <input type="checkbox" class="custom-control-input" id="customCheck1" />
                                             <label class="custom-control-label" for="customCheck1">Remember password</label>
                                         </div>
-                                        <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold coderatings-button mb-2" type="submit">Sign in</button>
+                                        <button
+                                            class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold coderatings-button mb-2"
+                                            type="submit"
+                                            onClick={handleFormSubmit}>
+                                            Sign in
+                                            </button>
                                         <div class="text-center">
                                             <a class="small" href="#">Forgot password?</a> <a class="small" href="#">Create an account?</a></div>
-                                        
+
                                     </form>
                                 </div>
                             </div>
