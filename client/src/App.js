@@ -10,6 +10,7 @@ import Registration from "./pages/Registration";
 import Home from "./pages/Home";
 import Friends from "./pages/Friends";
 import Profile from "./pages/Profile";
+import AddFriends from "./pages/AddFriends";
 
 
 function App() {
@@ -36,6 +37,9 @@ function App() {
           {/* <Route exact path="/friends">
             <Friends />
           </Route> */}
+          <Route exact path="/addFriends">
+            <AddFriends />
+          </Route>
           <Route exact path={["/Profile"]}>
             <Profile />
           </Route>
@@ -43,7 +47,7 @@ function App() {
             <NoMatch />
           </Route>
         </Switch>
-        </div>
+      </div>
     </Router>
   );
 }

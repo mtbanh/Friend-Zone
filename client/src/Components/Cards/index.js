@@ -2,9 +2,6 @@ import React from "react";
 import "./style.css";
 
 
-
-
-
 // function matches () 
 
 
@@ -12,7 +9,7 @@ const Cards = props =>{
     return(
         <div className="card">
         <div className="img-container">
-          <img alt={props.name} src={props.image} />
+          <img alt={props.name} src={props.image} height={200} width={200}/>
         </div>
         <div className="content">
           <ul>
