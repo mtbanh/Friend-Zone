@@ -1,6 +1,8 @@
 import React from "react";
+
 import "./style.css"
 import {Link} from "react-router-dom"
+
 
 
 class Nav extends React.Component {
@@ -10,8 +12,10 @@ class Nav extends React.Component {
                 <Link class="navbar-brand" id="brand">
                     <img src="..\src\assets\img\logo.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy" />
                 FriendZone
+
               </Link>
                 <button type="button" class="btn btn-primary btn-lg" id="loginBtn">Log in</button>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

@@ -54,11 +54,9 @@ const Chat = () => {
         var chat = { text: event.target.children[0].value, userID: userName, ChatId: chatId }
         API.postChatTransaction(chat)
             .then(res => {
-                var newTran = transactions
+                var newTran = [...transactions]
                 newTran.push(res.data)
                 setTransactions(newTran)
-                console.log(transactions)
-                // window.location.reload(false);
             })
     }
 
@@ -82,28 +80,6 @@ const Chat = () => {
         return string;
     }
 
-    function update(){
-        setInterval(() => {
-            transactions.map(tran => {
-            {
-                if (tran.userID == userName) {
-                    return (
-                        <div key={tran.id} className="card">
-                            <div className='bg-info card-body' key={tran.id}>{JSON.parse(formatDate(tran.timeStamp))}<div style={{ witdth: "100%", height: "1px", backgroundColor: "black" }}></div>{tran.text}</div>
-                        </div>
-                    )
-                }
-                else {
-                    return (
-                        <div key={tran.id} className="card">
-                            <div className='bg-secondary card-body' key={tran.id}>{JSON.parse(formatDate(tran.timeStamp))}<div style={{ witdth: "100%", height: "1px", backgroundColor: "black" }}></div>{tran.text}</div>
-                        </div>
-                    )
-                }
-            }
-
-        })}, 1000)
-    }
     return (
         <div className="container">
             <button onClick={handleClick}>New Chat</button>
@@ -115,36 +91,24 @@ const Chat = () => {
                         )
                     })}
                 </ul>
-                    <div className  = "col-md-8">
+                <div className="col-md-8">
                     <h3 style={{ display: showChat ? "block" : "none" }} >Chat with: {friendName}</h3>
-                    <div ref={scroller}  onLoad = {updateScroll} style={{ height: "300px", overflow: "scroll" }}>
+                    <div ref={scroller} style={{ height: "300px", overflow: "scroll" }}>
                         {transactions.map(tran => {
-                            {
-                                if (tran.userID == userName) {
-                                    return (
-                                        <div key={tran.id} className="card">
-                                            <div className='bg-info card-body' key={tran.id}>{JSON.parse(formatDate(tran.timeStamp))}<div style={{ witdth: "100%", height: "1px", backgroundColor: "black" }}></div>{tran.text}</div>
-                                        </div>
-                                    )
-                                }
-                                else {
-                                    return (
-                                        <div key={tran.id} className="card">
-                                            <div className='bg-secondary card-body' key={tran.id}>{JSON.parse(formatDate(tran.timeStamp))}<div style={{ witdth: "100%", height: "1px", backgroundColor: "black" }}></div>{tran.text}</div>
-                                        </div>
-                                    )
-                                }
-                            }
+                            return (
 
+                                <div key={tran.id} className="card">
+                                    <div className={tran.userID === userName ? "bg-info card-body" : "bg-secondary card-body"}>{JSON.parse(formatDate(tran.timeStamp))}<div style={{ witdth: "100%", height: "1px", backgroundColor: "black" }}></div>{tran.text}</div>
+                                </div>
+                            )
                         })}
-                        {update()}
-                        <div ref={scroller} ></div>
+                       
                     </div>
-                    <div className = "row">
-                    <form style={{ display: showChat ? "inline-block" : "none", width : "100%", padding: "20px"}} onSubmit={sendChatTransaction}>
-                        <input type="text" className=" col-md-9" placeholder="Enter a chat" style = {{height: "38px", paddingBottom : "4px"}}/>
-                        <button className=" col-md-3 btn" style = {{border: "solid 1px black", borderTopRightRadius : "5px", borderBottomRightRadius : "5px", borderTopLeftRadius : "0px", borderBottomLeftRadius : "0px"}} type="submit">Send</button>
-                    </form>
+                    <div className="row">
+                        <form style={{ display: showChat ? "inline-block" : "none", width: "100%", padding: "20px" }} onSubmit={sendChatTransaction}>
+                            <input type="text" className=" col-md-9" placeholder="Enter a chat" style={{ height: "38px", paddingBottom: "4px" }} />
+                            <button className=" col-md-3 btn" style={{ border: "solid 1px black", borderTopRightRadius: "5px", borderBottomRightRadius: "5px", borderTopLeftRadius: "0px", borderBottomLeftRadius: "0px" }} type="submit">Send</button>
+                        </form>
                     </div>
                 </div>
             </div>

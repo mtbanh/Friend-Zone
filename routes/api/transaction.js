@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const chatTransactionController = require("../../controllers/chatTransactionController");
-// Matches with "/api/chat-transaction"
+
 router
   .route("/")
   .get(chatTransactionController.findAll)
@@ -8,5 +8,8 @@ router
 
 router
   .route("/:chatId")
-  .get(chatTransactionController.findById)
+  .get(chatTransactionController.findById);
+
+router 
+  .route("/")
 module.exports = router;
