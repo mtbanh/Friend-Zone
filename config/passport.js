@@ -7,14 +7,15 @@ var db = require("../models");
 // Telling passport we want to use a Local Strategy. In other words, we want login with a username/email and password
 passport.use(new LocalStrategy(
 
-  function(username, password, done) {
+  function(email, password, done) {
     // When a user tries to sign in this code runs
     db.User.findOne({
       //using sequelize specific query to search the database for a specific condition
       where: {
-        username: username
+        email: email
       }
     }).then(function(dbUser) {
+      console.log(dbUser , "user")
       // If there's no user with the given username
       if (!dbUser) {
         return done(null, false, {

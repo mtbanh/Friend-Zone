@@ -6,7 +6,7 @@ import Chat from "./pages/Chat";
 import Landing from "./pages/Landing";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
-import Registration from "./pages/Registration";
+import Register from "./pages/Registration";
 import Home from "./pages/Home";
 import Friends from "./pages/Friends";
 import Profile from "./pages/Profile";
@@ -24,8 +24,8 @@ function App() {
           <Route exact path="/login">
             <Login />
           </Route>
-          <Route exact path="/registration">
-            <Registration />
+          <Route exact path="/register">
+            <Register />
           </Route>
           {/* <Route exact path="/home">
             <Home />

@@ -27,5 +27,14 @@ export default {
   },
   getChatsTransactionId:  (chatId) =>  {
     return axios.get("api/chat-transaction/" + chatId);
-  }  
+  },
+
+  createUser: (userData)=>{
+    return axios.post("/api/register", userData)
+  },
+
+  findUser:  ({username, password}) =>{
+    return axios.post("/api/login", {username, password})
+  }
+
 }
