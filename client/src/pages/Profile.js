@@ -1,6 +1,6 @@
 import React from "react";
 import "./ProfileStyle.css"
-
+import API from "../utils/API"
 
 const Profile = () => {
     return (
