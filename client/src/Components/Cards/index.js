@@ -7,8 +7,8 @@ import "./style.css";
 
 const Cards = props =>{
     return(
-        <div className="card">
-        <div className="img-container">
+        <div className="card" >
+        <div className="img-container" style={{display: 'flex', justifyContent: 'center'}}>
           <img alt={props.name} src={props.image} height={200} width={200}/>
         </div>
         <div className="content">
@@ -17,12 +17,12 @@ const Cards = props =>{
               <strong>Name:</strong> {props.name}
             </li>
             <li>
-              <strong>Mutual Hobbies:</strong> {}
+              <strong>Hobbies:</strong> {props.hobbies}
             </li>
           </ul>
         </div>
-        <span onClick={() => props.addFriend(props.id)} className="add">
-          +
+        <span onClick={() => props.addFriend(props.id)} className="btn btn-info add">
+          Add to Friend Zone!
         </span>
       </div>
     );
@@ -30,15 +30,3 @@ const Cards = props =>{
 
 export default Cards; 
 
-{/* <div className="card text-center">
-<div className="overflow">
-    <img alt={props.name} src={props.image}/>
-</div>
-<div ClassName="card-body">
-    <h4 className="card-title">{props.name}</h4>
-    <h6 className="card-text text-secondary">
-        Mutual Hobbies: {props.mutualhobbies}
-    </h6>
-    <a href="#" className="btn btn-outline-success">Add to FriendZone</a>
-</div>
-</div> */}
