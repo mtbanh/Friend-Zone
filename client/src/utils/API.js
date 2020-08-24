@@ -34,8 +34,9 @@ export default {
     return axios.post("/api/register", userData)
   },
 
-  findUser:  ({username, password}) =>{
-    return axios.post("/api/login", {username, password})
+  findUser:  ({email, password}) =>{
+    console.log(email,password)
+    return axios.post("/api/login", {email, password})
   }
 
 }

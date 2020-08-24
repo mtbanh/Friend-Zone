@@ -16,13 +16,10 @@ const Login = () => {
             event.preventDefault();
             console.log(userSigninObj);
             if(userSigninObj.email && userSigninObj.password){
-                API.findUser({
-                    username: userSigninObj.email,
-                    password: userSigninObj.password
-                })
+                API.findUser(userSigninObj)
                 .then(()=>{
                     console.log(`data passed to route`)
-                    // window.location.replace("/Profile")
+                    window.location.replace("/Profile")
                 })
                 .catch(err => console.log(err))
             }
