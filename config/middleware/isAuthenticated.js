@@ -1,6 +1,8 @@
 
 module.exports = function (req, res, next) {
   if (req.user) {
+    // console.log(req.user)
+    // console.log(req.session.passport.user)
     return next();
   }
 

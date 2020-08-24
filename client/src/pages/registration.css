@@ -17,12 +17,12 @@
   }
   
   .btn.coderatings-button {
-       background-color: fdcb9e;
+       background-color: #00b7c2;
         border: 1px solid #1b262c;
   }
   
   .btn.coderatings-button:hover {
-    background-color: #00b7c2; 
+    background-color:#91d18b ; 
   }
   
   .login-heading {

@@ -14,7 +14,7 @@ class Nav extends React.Component {
                 FriendZone
 
               </Link>
-                <button type="button" class="btn btn-primary btn-lg" id="loginBtn">Log in</button>
+                {/* <button type="button" class="btn btn-primary btn-lg" id="loginBtn">Log in</button> */}
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
