@@ -81,7 +81,7 @@ const Chat = () => {
         element.scrollIntoView({ behavior: 'smooth' })
     }
     return (
-        <div className="container" >
+        <div className="container backgroundImage" >
             {/* <button onClick={handleClick}>New Chat</button> */}
             <div className="row">
                     <ul className="list-group col-md-4 mt-4">
