@@ -15,11 +15,29 @@ function Addfriends(){
             id: 2,
             name: "Bill",
             hobbies: ["cooking", "basketball", "hiking"],
-            image: "https://www.biography.com/.image/t_share/MTE4MDAzNDEwNzg5ODI4MTEw/barack-obama-12782369-1-402.jpg"
+            image: "https://cdn.britannica.com/s:800x450,c:crop/43/172743-138-545C299D/overview-Barack-Obama.jpg"
         },
         {
             id: 3,
-            name: "Sally",
+            name: "Bill",
+            hobbies: ["cooking", "basketball", "hiking"],
+            image: "https://cdn.cnn.com/cnnnext/dam/assets/200818105342-obama-munich-large-169.jpg"
+        },
+        {
+            id: 4,
+            name: "Sue",
+            hobbies: ["cooking", "basketball", "hiking"],
+            image: "https://image.cnbcfm.com/api/v1/image/104656161-GettyImages-688156110.jpg?v=1532563778"
+        },
+        {
+            id: 5,
+            name: "Terry",
+            hobbies: ["cooking", "basketball", "hiking"],
+            image: "https://pbs.twimg.com/profile_images/822547732376207360/5g0FC8XX.jpg"
+        },
+        {
+            id: 6,
+            name: "Donald",
             hobbies: ["cooking", "basketball", "hiking"],
             image: "https://www.biography.com/.image/t_share/MTE4MDAzNDEwNzg5ODI4MTEw/barack-obama-12782369-1-402.jpg"
         }
@@ -55,7 +73,7 @@ return (
   customTransition="all .5"
   transitionDuration={500}
   containerClass="carousel-container"
-  removeArrowOnDeviceType={["tablet", "mobile"]}
+//   removeArrowOnDeviceType={["tablet", "mobile"]}
 //   deviceType={this.props.deviceType}
   dotListClass="custom-dot-list-style"
   itemClass="carousel-item-padding-40-px"
@@ -68,10 +86,10 @@ return (
     id={friend.id}
     />
 ))}
-  <div>Item 1</div>
+  {/* <div>Item 1</div>
   <div>Item 2</div>
   <div>Item 3</div>
-  <div>Item 4</div>
+  <div>Item 4</div> */}
 </Carousel>)
 }
 export default Addfriends;

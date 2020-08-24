@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import API from "../utils/API"
 
 import "./registration.css";
@@ -6,25 +6,22 @@ import "./registration.css";
 const Register = () => {
     const [userProfileObj, setUserProfileObj] = useState({})
 
-    const handleInputChange=(event)=>{
-        const {name, value} = event.target;
-        setUserProfileObj({...userProfileObj, [name]: value})
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setUserProfileObj({ ...userProfileObj, [name]: value })
     };
 
-    const handleFormSubmit=(event)=>{
+    const handleFormSubmit = (event) => {
         event.preventDefault();
         console.log(userProfileObj);
-        if(userProfileObj.name && userProfileObj.email && userProfileObj.password){
-            API.createUser({
-                name: userProfileObj.name,
-                email: userProfileObj.email,
-                password: userProfileObj.password
-            })
-            .then(()=>{
-                console.log(`data passed to route`)
-                window.location.replace("/Profile")
-            })
-            .catch(err => console.log(err))
+        if (userProfileObj.name && userProfileObj.email && userProfileObj.password) {
+            API.createUser( userProfileObj)
+                .then(() => {
+                    // console.log(`data passed to route`)
+                    // window.location.replace("/login")
+                    // this.setState({redirectTo:"/login"})
+                })
+                .catch(err => console.log(err))
         }
     }
 
@@ -39,60 +36,58 @@ const Register = () => {
                                 <div class="col-md-9 col-lg-8 mx-auto">
                                     <h3 class="login-heading mb-4">Ready to be in the Friend Zone?</h3>
                                     <form >
-                                        <div class="form-label-group">
-                                            <span>Full Name</span>
-                                            <input 
-                                            type="name"
-                                            name="name"
-                                            onChange={handleInputChange}
-                                            id="inputName" 
-                                            class="form-control" 
-                                            placeholder="John Doe" 
-                                            required autofocus />
 
+                                        <div class="form-label-group">
+                                            <input
+                                                type="text"
+                                                name="name"
+                                                id="inputName"
+                                                class="form-control"
+                                                placeholder="First and Last name"
+                                                onChange={handleInputChange}
+                                                required autofocus />
+                                            <label for="inputName">Full Name</label>
                                         </div>
 
                                         <div class="form-label-group">
+                                            <input
+                                                type="email"
+                                                name="email"
+                                                id="inputEmail"
+                                                class="form-control"
+                                                placeholder="Email address"
+                                                onChange={handleInputChange}
+                                                required autofocus />
                                             <label for="inputEmail">Email address</label>
-
-                                            <input 
-                                            type="email"
-                                            name="email" 
-                                            onChange={handleInputChange}
-                                            id="inputEmail" 
-                                            class="form-control" 
-                                            placeholder="Email address" 
-                                            required autofocus />
                                         </div>
 
                                         <div class="form-label-group">
-                                            <span>Password</span>
-
-                                            <input 
-                                            type="password" 
-                                            name="password"
-                                            onChange={handleInputChange}
-                                            id="inputPassword" 
-                                            class="form-control" 
-                                            placeholder="Password" 
-                                            required />
+                                            <input
+                                                name="password"
+                                                type="password"
+                                                onChange={handleInputChange}
+                                                id="inputPassword"
+                                                class="form-control"
+                                                placeholder="Password"
+                                                required />
+                                            <label for="inputPassword">Password</label>
                                         </div>
                                         {/* 
                                         <div class="custom-control custom-checkbox mb-3">
                                             <input type="checkbox" class="custom-control-input" id="customCheck1" />
                                             <label class="custom-control-label" for="customCheck1">Remember password</label>
                                         </div> */}
-                                        <button 
-                                        class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold coderatings-button mb-2" 
-                                        type="submit"
-                                        disabled={!(userProfileObj.name && userProfileObj.email && userProfileObj.password)}
-                                        onClick={handleFormSubmit}
+                                        <button
+                                            class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold coderatings-button mb-2"
+                                            type="submit"
+                                            disabled={!(userProfileObj.name && userProfileObj.email && userProfileObj.password)}
+                                            onClick={handleFormSubmit}
 
                                         >
                                             Register
                                         </button>
                                         <div class="text-center">
-                                            <a class="small" href="#">Log in?</a> </div>
+                                            <a class="medium" href="/login">Log in?</a> </div>
 
                                     </form>
                                 </div>

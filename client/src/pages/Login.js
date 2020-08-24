@@ -16,13 +16,10 @@ const Login = () => {
             event.preventDefault();
             console.log(userSigninObj);
             if(userSigninObj.email && userSigninObj.password){
-                API.findUser({
-                    username: userSigninObj.email,
-                    password: userSigninObj.password
-                })
+                API.findUser(userSigninObj)
                 .then(()=>{
                     console.log(`data passed to route`)
-                    // window.location.replace("/Profile")
+                    window.location.replace("/Profile")
                 })
                 .catch(err => console.log(err))
             }
@@ -51,7 +48,14 @@ const Login = () => {
                                         </div>
 
                                         <div class="form-label-group">
-                                            <input name="password" type="password" onChange={handleInputChange} id="inputPassword" class="form-control" placeholder="Password" required />
+                                            <input 
+                                            name="password" 
+                                            type="password" 
+                                            onChange={handleInputChange} 
+                                            id="inputPassword" 
+                                            class="form-control" 
+                                            placeholder="Password" 
+                                            required />
                                             <label for="inputPassword">Password</label>
                                         </div>
 
@@ -66,7 +70,7 @@ const Login = () => {
                                             Sign in
                                             </button>
                                         <div class="text-center">
-                                            <a class="small" href="#">Forgot password?</a> <a class="small" href="#">Create an account?</a></div>
+                                            <a class="small" href="#">Forgot password?</a> <a class="small" href="/register">Create an account?</a></div>
 
                                     </form>
                                 </div>

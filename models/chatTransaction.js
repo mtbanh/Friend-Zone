@@ -6,7 +6,7 @@ module.exports = function (sequelize, DataTypes) {
         userID: DataTypes.STRING,
         timeStamp: {
             type: DataTypes.STRING,
-            defaultValue: moment().format("YYYYMMDD")
+            defaultValue: moment().format("LLLL")
         }
     })
     ChatTransaction.associate = function (models) {
