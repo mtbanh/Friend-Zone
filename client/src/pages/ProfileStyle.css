@@ -1,0 +1,11 @@
+.profilePicture {
+    position: relative;
+    width: 300px;     
+    height: 300px;
+    overflow: hidden;
+}
+
+.greeting {
+    color: black;
+    text-align: center;
+}
