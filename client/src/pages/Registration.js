@@ -15,14 +15,9 @@ const Register = () => {
         event.preventDefault();
         console.log(userProfileObj);
         if (userProfileObj.name && userProfileObj.email && userProfileObj.password) {
-            API.createUser({
-                name: userProfileObj.name,
-                email: userProfileObj.email,
-                password: userProfileObj.password
-            })
+            API.createUser( userProfileObj)
                 .then(() => {
                     console.log(`data passed to route`)
-                    window.location.replace("/Profile")
                 })
                 .catch(err => console.log(err))
         }

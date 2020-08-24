@@ -30,6 +30,7 @@ export default {
   },
 
   createUser: (userData)=>{
+    console.log(userData)
     return axios.post("/api/register", userData)
   },
 
