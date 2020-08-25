@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./ProfileStyle.css"
-// import API from "../utils/API"
+import API from "../utils/API"
 // import { client } from "filestack-react";
 import ReactFilestack from "filestack-react";
 
@@ -15,10 +15,13 @@ const friendsList = []
 class Profile extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+      firstName: "",
+      lastName: "",
+      age: "",
+      bio: "",
+      hobby: "",
+    };
     this.state = {
       files: [],
     };
@@ -28,14 +31,45 @@ class Profile extends Component {
     this.setState({ files: filesUploaded });
   };
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    let value = event.target.value;
+    const name = event.target.name;
+    const lastName = event.target.lastName;
+    const age = event.target.age;
+    const bio = event.target.bio;
+    const hobby = event.target.hobby;
 
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+
+    // Updating the input's state
+    this.setState({
+      [name]: value,
+      [lastName]: value,
+      [age]: value,
+      [bio]: value,
+      [hobby]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
+    if (this.state.firstName && this.state.lastName && this.state.age && this.state.bio && this.state.hobby) {
+      API.createProfile()
+    .then(() => {
+
+    })
+    .catch(err => console.log(err))
   }
+ 
+    this.setState({
+      firstName: "",
+      lastName: "",
+      age: "",
+      bio: "",
+      hobby: ""
+    });
+  };
 
 
   render() {
@@ -84,19 +118,37 @@ class Profile extends Component {
             <div className="form-group">
               <label className="col-lg-3 control-label">First name:</label>
               <div className="col-lg-8">
-                <input type="textarea" value={this.state.value} onChange={this.handleChange} placeholder= "Farley" ></input>
+                <input
+                  className="form-control"
+                  type="textarea"
+                  name={this.state.firstName}
+                  onChange={this.handleChange}
+                  placeholder="Farley"
+                />
               </div>
             </div>
             <div className="form-group">
               <label className="col-lg-3 control-label">Last name:</label>
               <div className="col-lg-8">
-                <input type="textarea" value={this.state.value} onChange={this.handleChange} placeholder="Bacon"></input>
+                <input 
+                className="form-control"
+                type="textarea"
+                value={this.state.lastName} 
+                onChange={this.handleChange} 
+                placeholder="Bacon"
+                />
               </div>
             </div>
             <div className="form-group">
               <label className="col-lg-3 control-label">Age:</label>
               <div className="col-lg-8">
-                <input className="form-control" type="text" placeholder="25"></input>
+                <input 
+                className="form-control" 
+                type="text" 
+                value={this.state.age} 
+                onChange={this.handleChange} 
+                placeholder="25"
+                />
               </div>
             </div>
             <div className="form-group">
@@ -118,13 +170,20 @@ class Profile extends Component {
             <div className="form-group">
               <label className="col-md-3 control-label">Bio:</label>
               <div className="col-md-8">
-                <input className="form-control" type="text" placeholder="I like..."></input>
+                <input 
+                className="form-control" 
+                type="text" 
+                value={this.state.bio} 
+                onChange={this.handleChange} 
+                placeholder="I like..."
+                />
               </div>
             </div>
             <div className="form-group">
               <label className="col-md-3 control-label"></label>
               <div className="col-md-8">
-              <button class="btn btn-primary" type="submit">Create Profile</button>
+                <button class="btn btn-primary" type="submit" onClick={this.handleFormSubmit}>Create Profile</button>
+                {/* creat handle submit api.create profile */}
                 <span></span>
                 <input type="reset" className="btn btn-default" value="Cancel"></input>
               </div>

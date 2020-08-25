@@ -19,6 +19,12 @@ module.exports = function(sequelize, DataTypes) {
         },
         img_url:{
             type: DataTypes.STRING(1000)        
+        },
+        hobbies: {
+            type: DataTypes.JSON(2000)
+        },
+        friends_list:{
+            type: DataTypes.JSON(2000)
         }
     });
     Profile.associate = function (models){
