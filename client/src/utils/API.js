@@ -19,8 +19,11 @@ export default {
   createProfile: (profile) => {
     return axios.post ("api/profile", profile);
   },
-  getProfile: (profile) => {
-    return axios.get ("api/profile", profile);
+  getProfiles: () => {
+    return axios.get ("api/profile/");
+  },
+  getProfile: (id) => {
+    return axios.get ("api/profile/"+id);
   },
   getChatsTransaction: ()=>{
     return axios.get("api/chat-transaction");
@@ -31,12 +34,11 @@ export default {
 
   createUser: (userData)=>{
     console.log(userData)
-    return axios.post("/api/register", userData)
+    return axios.post("api/register", userData)
   },
 
   findUser:  ({email, password}) =>{
     console.log(email,password)
-    return axios.post("/api/login", {email, password})
+    return axios.post("api/login", {email, password})
   }
-
 }

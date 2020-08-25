@@ -8,8 +8,8 @@ import ReactFilestack from "filestack-react";
 const apiKey = "AXsVOdIjfR3eVPnGtz0CLz"
 // const client = filestack.init(apiKey)
 let imgURL = "";
-const hobbies = []
-const friendsList = []
+// const hobbies = []
+// const friendsList = []
 
 
 class Profile extends Component {
@@ -34,32 +34,15 @@ class Profile extends Component {
     const {
       name,value
     } = event.target 
-    this.setState ({[name]:value})
+    this.setState ({[name]:value}) 
     console.log(this.state)
-    // Getting the value and name of the input which triggered the change
-    // let value = event.target.value;
-    // const name = event.target.name;
-    // const lastName = event.target.lastName;
-    // const age = event.target.age;
-    // const bio = event.target.bio;
-    // const hobby = event.target.hobby;
-
-
-    // Updating the input's state
-    // this.setState({
-    //   "name": "",
-    //   "lastName": "",
-    //   "age": "",
-    //   "bio": "",
-    //   "hobby": ""
-    // });
   };
 
   handleFormSubmit = event => {
     console.log(event)
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    if (this.state.firstName && this.state.lastName && this.state.age && this.state.bio) {
+    if (this.state.firstName && this.state.lastName && this.state.age && this.state.bio && this.state.hobby) {
       console.log(this.state)
       API.createProfile(this.state)
     .then(() => {
@@ -69,7 +52,6 @@ class Profile extends Component {
   }
  
   };
-
 
   render() {
     const { files } = this.state;
@@ -157,7 +139,7 @@ class Profile extends Component {
               <label className="col-lg-3 control-label">Hobby:</label>
               <div className="col-lg-8">
                 <div className="ui-select">
-                  <select id="user_time_zone" className="form-control">
+                  <select name= "hobby" value={this.state.hobby} onChange={this.handleInputChange}>
                     <option value="Scale Miniature Building">Scale Miniature Building</option>
                     <option value="Rock climbing">Rock clmbing</option>
                     <option value="Swimming">Swimming</option>
