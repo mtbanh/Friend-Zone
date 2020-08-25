@@ -17,7 +17,7 @@ const Register = () => {
         if (userProfileObj.name && userProfileObj.email && userProfileObj.password) {
             API.createUser( userProfileObj)
                 .then(() => {
-                    // console.log(`data passed to route`)
+                    console.log(`user created`)
                     window.location.replace("/Login")
                     // this.setState({redirectTo:"/login"})
                 })
