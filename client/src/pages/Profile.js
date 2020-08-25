@@ -8,69 +8,50 @@ import ReactFilestack from "filestack-react";
 const apiKey = "AXsVOdIjfR3eVPnGtz0CLz"
 // const client = filestack.init(apiKey)
 let imgURL = "";
-const hobbies = []
-const friendsList = []
+// const hobbies = []
+// const friendsList = []
 
 
 class Profile extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  // constructor(props) {
+    // super(props);
+    state = {
       firstName: "",
       lastName: "",
       age: "",
       bio: "",
       hobby: "",
+      files: []
     };
-    this.state = {
-      files: [],
-    };
-  }
+  
 
   onFiles = ({ filesUploaded }) => {
     this.setState({ files: filesUploaded });
   };
 
-  handleInputChange = event => {
-    // Getting the value and name of the input which triggered the change
-    let value = event.target.value;
-    const name = event.target.name;
-    const lastName = event.target.lastName;
-    const age = event.target.age;
-    const bio = event.target.bio;
-    const hobby = event.target.hobby;
-
-
-    // Updating the input's state
-    this.setState({
-      [name]: value,
-      [lastName]: value,
-      [age]: value,
-      [bio]: value,
-      [hobby]: value
-    });
+  handleInputChange = event => { 
+    console.log(event.target)
+    const {
+      name,value
+    } = event.target 
+    this.setState ({[name]:value}) 
+    console.log(this.state)
   };
 
   handleFormSubmit = event => {
+    console.log(event)
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
     if (this.state.firstName && this.state.lastName && this.state.age && this.state.bio && this.state.hobby) {
-      API.createProfile()
+      console.log(this.state)
+      API.createProfile(this.state)
     .then(() => {
-
+    
     })
     .catch(err => console.log(err))
   }
  
-    this.setState({
-      firstName: "",
-      lastName: "",
-      age: "",
-      bio: "",
-      hobby: ""
-    });
   };
-
 
   render() {
     const { files } = this.state;
@@ -120,9 +101,10 @@ class Profile extends Component {
               <div className="col-lg-8">
                 <input
                   className="form-control"
-                  type="textarea"
-                  name={this.state.firstName}
-                  onChange={this.handleChange}
+                  type="text"
+                  name="firstName"
+                  value= {this.state.firstName}
+                  onChange={this.handleInputChange}
                   placeholder="Farley"
                 />
               </div>
@@ -132,9 +114,10 @@ class Profile extends Component {
               <div className="col-lg-8">
                 <input 
                 className="form-control"
-                type="textarea"
-                value={this.state.lastName} 
-                onChange={this.handleChange} 
+                type="text"
+                name="lastName" 
+                value= {this.state.lastName}
+                onChange={this.handleInputChange} 
                 placeholder="Bacon"
                 />
               </div>
@@ -145,8 +128,9 @@ class Profile extends Component {
                 <input 
                 className="form-control" 
                 type="text" 
-                value={this.state.age} 
-                onChange={this.handleChange} 
+                name="age"
+                value={this.state.age}
+                onChange={this.handleInputChange} 
                 placeholder="25"
                 />
               </div>
@@ -155,7 +139,7 @@ class Profile extends Component {
               <label className="col-lg-3 control-label">Hobby:</label>
               <div className="col-lg-8">
                 <div className="ui-select">
-                  <select id="user_time_zone" className="form-control">
+                  <select name= "hobby" value={this.state.hobby} onChange={this.handleInputChange}>
                     <option value="Scale Miniature Building">Scale Miniature Building</option>
                     <option value="Rock climbing">Rock clmbing</option>
                     <option value="Swimming">Swimming</option>
@@ -171,10 +155,11 @@ class Profile extends Component {
               <label className="col-md-3 control-label">Bio:</label>
               <div className="col-md-8">
                 <input 
-                className="form-control" 
+                class="form-control" 
                 type="text" 
+                name="bio"
                 value={this.state.bio} 
-                onChange={this.handleChange} 
+                onChange={this.handleInputChange} 
                 placeholder="I like..."
                 />
               </div>
@@ -195,5 +180,4 @@ class Profile extends Component {
     );
   }
 }
-
 export default Profile;
