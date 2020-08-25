@@ -11,6 +11,7 @@ const Register = () => {
         setUserProfileObj({ ...userProfileObj, [name]: value })
     };
 
+
     const handleFormSubmit = (event) => {
         event.preventDefault();
         console.log(userProfileObj);
