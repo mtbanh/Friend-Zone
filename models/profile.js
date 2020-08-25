@@ -11,27 +11,27 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false,
         },
         age: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER(4),
             allowNull: false,
+        },
+        friends_list:{
+            type: DataTypes.JSON(2000)
+        },
+        hobby: {
+            type: DataTypes.STRING(2000)
         },
         bio: {
             type: DataTypes.STRING(1000)
         },
         img_url:{
-            type: DataTypes.STRING(1000)        
-        },
-        hobbies: {
-            type: DataTypes.JSON(2000)
-        },
-        friends_list:{
-            type: DataTypes.JSON(2000)
-        }
+            type: DataTypes.STRING(1000)
+        } 
     });
-    Profile.associate = function (models){
-        // Profile can't be created w/o an user due to foreign key constraint
-        Profile.belongsTo(models.User,{
-            foreignKey: { allowNull: false}
-        });
-    }
+    // Profile.associate = function (models){
+    //     // Profile can't be created w/o an user due to foreign key constraint
+    //     Profile.belongsTo(models.User,{
+    //         foreignKey: { allowNull: false}
+    //     });
+    // }
     return Profile;
 }
