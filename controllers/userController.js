@@ -1,5 +1,5 @@
 const db = require("../models");
-const bcrypt = require("bcryptjs");
+// const bcrypt = require("bcryptjs");
 
 module.exports = {
     createUser: (req, res) => {
@@ -7,7 +7,7 @@ module.exports = {
             db.User.create(req.body)
                 .then(() => {
                     console.log(`User created`)
-                    res.redirect(307, "/login")
+                    res.redirect(307, "/api/login")
                 })
                 .catch(err => {
                     res.status(422).json(err)
