@@ -41,16 +41,16 @@ const Chat = () => {
             })
     };
 
-    // function handleClick() {
-    //     API.postChat({ user1: userName, user2: 4 })
-    //         .then(res => {
-    //             var newChat = chats
-    //             newChat.push(res.data)
-    //             setChats(newChat)
-    //             loadTransactions(res.data.id)
-    //             window.location.reload(false);
-    //         })
-    // }
+    function handleClick() {
+        API.postChat({ user1: userName, user2: 5 })
+            .then(res => {
+                var newChat = chats
+                newChat.push(res.data)
+                setChats(newChat)
+                loadTransactions(res.data.id)
+                window.location.reload(false);
+            })
+    }
 
     function displayChat(event) {
         event.preventDefault();
@@ -82,7 +82,7 @@ const Chat = () => {
     }
     return (
         <div className="container backgroundImage" >
-            {/* <button onClick={handleClick}>New Chat</button> */}
+            <button onClick={handleClick}>New Chat</button>
             <div className="row">
                     <ul className="list-group col-md-4 mt-4">
                         {chats.map(chat => {
