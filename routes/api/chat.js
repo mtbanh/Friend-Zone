@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const chatController = require("../../controllers/chatController");
-
 // Matches with "/api/chat"
 router
   .route("/")
