@@ -24,8 +24,13 @@ module.exports = {
       name: "Frank Bigelow",
       gender: "male",
       age: 52,
+<<<<<<< HEAD
       friends_list: [],
       hobbies: ["cooking", "rodeo", "football", "coaching", "politics"],
+=======
+      friends_list: "",
+      hobbies: "cooking, rodeo, football, coaching, politics",
+>>>>>>> 63346fdd7a99377a4575d65628d078bbed1fe063
       bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
       img_url: "https://www.assembly.ca.gov/sites/assembly.ca.gov/files/memberphotos/AD05-Frank_Bigelow.jpg",
     },
