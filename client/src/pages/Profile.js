@@ -13,62 +13,61 @@ const friendsList = []
 
 
 class Profile extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  // constructor(props) {
+    // super(props);
+    state = {
       firstName: "",
       lastName: "",
       age: "",
       bio: "",
       hobby: "",
+      files: []
     };
-    this.state = {
-      files: [],
-    };
-  }
+  
 
   onFiles = ({ filesUploaded }) => {
     this.setState({ files: filesUploaded });
   };
 
-  handleInputChange = event => {
+  handleInputChange = event => { 
+    console.log(event.target)
+    const {
+      name,value
+    } = event.target 
+    this.setState ({[name]:value})
+    console.log(this.state)
     // Getting the value and name of the input which triggered the change
-    let value = event.target.value;
-    const name = event.target.name;
-    const lastName = event.target.lastName;
-    const age = event.target.age;
-    const bio = event.target.bio;
-    const hobby = event.target.hobby;
+    // let value = event.target.value;
+    // const name = event.target.name;
+    // const lastName = event.target.lastName;
+    // const age = event.target.age;
+    // const bio = event.target.bio;
+    // const hobby = event.target.hobby;
 
 
     // Updating the input's state
-    this.setState({
-      [name]: value,
-      [lastName]: value,
-      [age]: value,
-      [bio]: value,
-      [hobby]: value
-    });
+    // this.setState({
+    //   "name": "",
+    //   "lastName": "",
+    //   "age": "",
+    //   "bio": "",
+    //   "hobby": ""
+    // });
   };
 
   handleFormSubmit = event => {
+    console.log(event)
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    if (this.state.firstName && this.state.lastName && this.state.age && this.state.bio && this.state.hobby) {
-      API.createProfile()
+    if (this.state.firstName && this.state.lastName && this.state.age && this.state.bio) {
+      console.log(this.state)
+      API.createProfile(this.state)
     .then(() => {
-
+    
     })
     .catch(err => console.log(err))
   }
  
-    this.setState({
-      firstName: "",
-      lastName: "",
-      age: "",
-      bio: "",
-      hobby: ""
-    });
   };
 
 
@@ -120,9 +119,10 @@ class Profile extends Component {
               <div className="col-lg-8">
                 <input
                   className="form-control"
-                  type="textarea"
-                  name={this.state.firstName}
-                  onChange={this.handleChange}
+                  type="text"
+                  name="firstName"
+                  value= {this.state.firstName}
+                  onChange={this.handleInputChange}
                   placeholder="Farley"
                 />
               </div>
@@ -132,9 +132,10 @@ class Profile extends Component {
               <div className="col-lg-8">
                 <input 
                 className="form-control"
-                type="textarea"
-                value={this.state.lastName} 
-                onChange={this.handleChange} 
+                type="text"
+                name="lastName" 
+                value= {this.state.lastName}
+                onChange={this.handleInputChange} 
                 placeholder="Bacon"
                 />
               </div>
@@ -145,8 +146,9 @@ class Profile extends Component {
                 <input 
                 className="form-control" 
                 type="text" 
-                value={this.state.age} 
-                onChange={this.handleChange} 
+                name="age"
+                value={this.state.age}
+                onChange={this.handleInputChange} 
                 placeholder="25"
                 />
               </div>
@@ -171,10 +173,11 @@ class Profile extends Component {
               <label className="col-md-3 control-label">Bio:</label>
               <div className="col-md-8">
                 <input 
-                className="form-control" 
+                class="form-control" 
                 type="text" 
+                name="bio"
                 value={this.state.bio} 
-                onChange={this.handleChange} 
+                onChange={this.handleInputChange} 
                 placeholder="I like..."
                 />
               </div>
@@ -195,5 +198,4 @@ class Profile extends Component {
     );
   }
 }
-
 export default Profile;
