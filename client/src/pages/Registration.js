@@ -18,7 +18,7 @@ const Register = () => {
             API.createUser( userProfileObj)
                 .then(() => {
                     // console.log(`data passed to route`)
-                    // window.location.replace("/login")
+                    window.location.replace("/Login")
                     // this.setState({redirectTo:"/login"})
                 })
                 .catch(err => console.log(err))
