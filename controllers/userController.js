@@ -7,7 +7,7 @@ module.exports = {
             db.User.create(req.body)
                 .then(() => {
                     console.log(`User added to db`)
-                    // res.redirect(307, "/api/login")
+                    // res.redirect(303, "/login")
                 })
                 .catch(err => {
                     res.status(422).json(err)
@@ -16,15 +16,6 @@ module.exports = {
                 })
         }
 
-    // findUser: (req, res) => {
-    //     console.log(req.user)
-        // db.User.
-        //     .then(() => next())
-        //     .catch(err => {
-        //         res.status(422).json(err)
-        //         console.log(`Error finding user`)
-        //     })
-    
 }
 
     // try {

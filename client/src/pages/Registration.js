@@ -19,7 +19,7 @@ const Register = () => {
             API.createUser( userProfileObj)
                 .then(() => {
                     console.log(`user created`)
-                    window.location.replace("/Login")
+                    window.location.replace("/login")
                     // this.setState({redirectTo:"/login"})
                 })
                 .catch(err => console.log(err))

@@ -21,6 +21,11 @@ const Login = () => {
             API.findUser(userSigninObj)
                 .then(({data: userData}) => {
                     console.log(`data passed to route`)
+                    // const LoggedIn = (userData) =>{
+                    //     if (userData !== null){
+                    //         return true
+                    //     }
+                    // }
                     setUser(userData);
                 })
                 .catch(err => console.log(err))

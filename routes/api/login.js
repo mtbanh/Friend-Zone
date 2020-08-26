@@ -17,33 +17,7 @@ router.route("/")
         }
         
     )
-    // .get(
-    //     passport.authenticate("local", (err, user, info)=>{
-    //         if(err) {return next(err)}
-    //         if(!user) {return res.redirect("/login")}
-    //         req.logIn(user, err=>{
-    //             if(err) {return next(err)}
-    //             return res.redirect("/users/" + user.username)
-    //         })
-    //     }) 
-    // )
-
-
-// router.route("/user_data")
-//         .get(
-//             passport.authenticate("local"),
-//             ((req,res)=>{
-//                 if(!req.user){
-//                     res.json({})
-//                     console.log("Not a user")
-//                 } else {
-//                     res.json({
-//                         id: req.user.id
-//                     })
-//                 }
-//             })
-//         )
-
+  
    
 
 module.exports = router
