@@ -1,29 +1,40 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect, useContext } from "react";
 import API from "../utils/API"
 import "./login.css";
+import UserContext from "../utils/UserContext/userContext";
 
 
 const Login = () => {
-    
-        const [userSigninObj, setUserSigninObj] = useState({})
-    
-        const handleInputChange=(event)=>{
-            const {name, value} = event.target;
-            setUserSigninObj({...userSigninObj, [name]: value})
-        };
-    
-        const handleFormSubmit=(event)=>{
-            event.preventDefault();
-            console.log(userSigninObj);
-            if(userSigninObj.email && userSigninObj.password){
-                API.findUser(userSigninObj)
-                .then(()=>{
+
+    const [userSigninObj, setUserSigninObj] = useState({})
+    const {setUser} = useContext(UserContext)
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setUserSigninObj({ ...userSigninObj, [name]: value })
+    };
+
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+        console.log(userSigninObj);
+        if (userSigninObj.email && userSigninObj.password) {
+            API.findUser(userSigninObj)
+                .then(({data: userData}) => {
                     console.log(`data passed to route`)
-                    window.location.replace("/Profile")
+                    // const LoggedIn = (userData) =>{
+                    //     if (userData !== null){
+                    //         return true
+                    //     }
+                    // }
+                    setUser(userData);
                 })
                 .catch(err => console.log(err))
-            }
         }
+    }
+    // if(messages.error){
+    //     return errorMessages
+    // }
+
     return (
         <div class="container-fluid">
             <div class="row no-gutter">
@@ -34,6 +45,7 @@ const Login = () => {
                             <div class="row no-gutter">
                                 <div class="col-md-9 col-lg-8 mx-auto">
                                     <h3 class="login-heading mb-4">Welcome back!</h3>
+                                    <h4>Error</h4>
                                     <form>
                                         <div class="form-label-group">
                                             <input
@@ -42,20 +54,20 @@ const Login = () => {
                                                 id="inputEmail"
                                                 class="form-control"
                                                 placeholder="Email address"
-                                                onChange = {handleInputChange}
+                                                onChange={handleInputChange}
                                                 required autofocus />
                                             <label for="inputEmail">Email address</label>
                                         </div>
 
                                         <div class="form-label-group">
-                                            <input 
-                                            name="password" 
-                                            type="password" 
-                                            onChange={handleInputChange} 
-                                            id="inputPassword" 
-                                            class="form-control" 
-                                            placeholder="Password" 
-                                            required />
+                                            <input
+                                                name="password"
+                                                type="password"
+                                                onChange={handleInputChange}
+                                                id="inputPassword"
+                                                class="form-control"
+                                                placeholder="Password"
+                                                required />
                                             <label for="inputPassword">Password</label>
                                         </div>
 

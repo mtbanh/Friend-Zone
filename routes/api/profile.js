@@ -1,24 +1,13 @@
 const router = require("express").Router();
-<<<<<<< HEAD
-const profile = require("../../controllers/profileController");
-
-router.route("/")
-    .post( profile.createProfile)
-
-
-   
-
-module.exports = router
-=======
 const profileController = require("../../controllers/profileController");
+const passport =require("../../config/passport")
 // Matches with "/api/chat"
 router
   .route("/")
-  .get(profileController.findAll)
-  .post(profileController.create);
+  .get(passport.authenticate("local"), profileController.findAll)
+  .post(passport.authenticate("local"),profileController.create);
 
 router
   .route("/:id")
-  .get(profileController.getById)
+  .get(passport.authenticate("local"),profileController.getById)
 module.exports = router;
->>>>>>> 51ef9d710e19053c5835f5952b4d5bf087cebf98

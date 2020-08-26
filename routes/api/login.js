@@ -1,16 +1,22 @@
 const router = require("express").Router();
 // const login = require("../../controllers/userController");
-const passport = require("../../config/passport")
-
+// const isAuthenticated = require("../../config/middleware/isAuthenticated")
+const passport = require("../../config/passport");
 // api route api/login
+
+// initializePassport(passport, email => db.Users.find(user =>user.email === email))
+
 router.route("/")
     .post(
-        passport.authenticate("local"),
-        ((req, res) => {
+        passport.authenticate("local", {
+            // successRedirect: "/profile",
+            // failureRedirect:"/login",
+            // failureFlash: true
+        }), (req, res) => {
             res.json(req.user)
-        })
+        }
+        
     )
-
 router.route("/user_data")
         .get(
             passport.authenticate("local"),
@@ -25,7 +31,5 @@ router.route("/user_data")
                 }
             })
         )
-
-   
 
 module.exports = router

@@ -39,6 +39,10 @@ export default {
 
   findUser:  ({email, password}) =>{
     console.log(email,password)
-    return axios.post("api/login", {email, password})
+    return axios.post("/api/login", {email, password})
+  },
+
+  getUserData: ()=>{
+    return axios.get("")
   }
 }

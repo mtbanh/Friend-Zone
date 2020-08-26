@@ -10,7 +10,7 @@ passport.use(new LocalStrategy(
     usernameField: "email"
   },
 
-  function(email, password, done) {
+  function( email, password, done) {
     // When a user tries to sign in this code runs
     db.User.findOne({
       //using sequelize specific query to search the database for a specific condition
@@ -18,7 +18,7 @@ passport.use(new LocalStrategy(
         email: email
       }
     }).then(function(dbUser) {
-      console.log(dbUser , "user")
+      console.log(dbUser , "here is the dbUser")
       // If there's no user with the given username
       if (!dbUser) {
         return done(null, false, {
@@ -31,23 +31,26 @@ passport.use(new LocalStrategy(
           message: "Incorrect password."
         });
       }
+
       // If none of the above, return the user
       return done(null, dbUser);
     });
   }
+  
 ));
 
 // In order to help keep authentication state across bvgHTTP requests,
 // Sequelize needs to serialize and deserialize the user
 // Just consider this part boilerplate needed to make it all work
-passport.serializeUser(function(user, cb) {
-  console.log(user.id)
-  cb(null, user);
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+    console.log(user.id)
+
 });
 
-passport.deserializeUser(function(obj, cb) {
+passport.deserializeUser(function(obj, done) {
   // dbUser.findById(id, (err, dbUser)=>{
-    cb(null, obj)
+    done(null, obj)
   })
 
 

@@ -11,6 +11,7 @@ const Register = () => {
         setUserProfileObj({ ...userProfileObj, [name]: value })
     };
 
+
     const handleFormSubmit = (event) => {
         event.preventDefault();
         console.log(userProfileObj);
@@ -18,7 +19,8 @@ const Register = () => {
             API.createUser( userProfileObj)
                 .then(() => {
                     console.log(`user created`)
-                    window.location.replace("/Login")
+                    window.location.replace("/login")
+
                     // this.setState({redirectTo:"/login"})
                 })
                 .catch(err => console.log(err))

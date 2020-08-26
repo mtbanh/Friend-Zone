@@ -3,12 +3,17 @@ var db = require('./models')
 const routes = require("./routes");
 var PORT = process.env.PORT || 3001;
 var session = require("express-session");
+const passport = require("passport")
+// var initializePassport = require("./config/passport");
+const flash = require("express-flash");
 var passport = require("./config/passport");
 // var profileSeed = require("./seeders")
 const app = express()
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
-
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+  }
 // if (process.env.NODE_ENV === "production") {
 //     app.use(express.static("client/build"));
 //   }
@@ -113,9 +118,10 @@ const profileSeed = [{
   }
 ]
 
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(session({ secret: "keyboard cat", resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash())
 
 app.use(routes);
 
