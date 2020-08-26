@@ -16,7 +16,7 @@ export default {
     return axios.get("api/chat-transaction", chatTran);
   },
   // Profile
-  postProfile: (profile) => {
+  createProfile: (profile) => {
     return axios.post ("api/profile", profile);
   },
   getProfiles: () => {

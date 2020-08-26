@@ -17,7 +17,19 @@ router.route("/")
         }
         
     )
-  
-   
+router.route("/user_data")
+        .get(
+            passport.authenticate("local"),
+            ((req,res)=>{
+                if(!req.user){
+                    res.json({})
+                    console.log("Not a user")
+                } else {
+                    res.json({
+                        id: req.user.id
+                    })
+                }
+            })
+        )
 
 module.exports = router
