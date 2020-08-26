@@ -6,8 +6,8 @@ module.exports = {
         console.log(req.body);
             db.User.create(req.body)
                 .then(() => {
-                    console.log(`User added to db`)
-                    // res.redirect(303, "/login")
+                    console.log(`User created`)
+                    res.redirect(307, "/api/login")
                 })
                 .catch(err => {
                     res.status(422).json(err)
