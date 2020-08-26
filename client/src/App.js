@@ -16,88 +16,102 @@ import UserContext from "./utils/UserContext/userContext"
 
 
 function App() {
-  const [user, setUser] = useState()
+  const [user, setUser] = useState({})
   
   useEffect(() => {
     console.log(user)
   }, [user]);
 
-  const isLoggedIn = ()=>{
-    console.log(user)
-    if(user !== null){
-      return true
-    }
-  };
+  // function isLoggedIn (){
+  //   console.log(user)
+  //   if(user !== null){
+  //     return true
+  //   }
+  // };
 
-  const PrivateRoute = ({component: Component,...rest}) =>{
-    return (
-      <Route {...rest} render={props =>{
-        isLoggedIn() ? 
-        <Component {...props} /> 
-        :
-        <Redirect to="/signin" />
-      }}
-      />
-    )
+  function appRoutes() {
+   return user ?
+      <>
+        <Route exact path="/chat">
+          <Chat />
+        </Route>
+        
+        <Route exact path="/addFriends">
+          <AddFriends />
+        </Route>
+        <Route exact path="/profile">
+          <Profile />
+        </Route>
+      </>
+   :
+      <>
+        <Route exact path="/login">
+          <Login />
+        </Route>
+        <Route exact path="/register">
+          <Register />
+        </Route>
+      </>
+   
   }
-
-  const PublicRoute = ({component: Component, restricted, ...rest}) =>{
-    return(
-      <Route {...rest} render ={props =>(
-        isLoggedIn() && restricted ?
-          <Redirect to="/profile" />
-          :
-          <Component {...props}
-      )} 
-      />
-    )
-  }
-  // function appRoutes() {
-  //   if(user) return true ?
-  //     <>
-  //       <Route exact path="/chat">
-  //         <Chat />
-  //       </Route>
-  //       {/* <Route exact path="/friends">
-  //           <Friends />
-  //         </Route> */}
-  //       <Route exact path="/addFriends">
-  //         <AddFriends />
-  //       </Route>
-  //       <Route exact path={["/Profile"]}>
-  //         <Profile />
-  //       </Route>
-  //     </>
-  //     :
-  //     <>
-  //       <Route exact path="/login">
-  //         <Login />
-  //       </Route>
-  //       <Route exact path="/register">
-  //         <Register />
-  //       </Route>
-  //     </>
-
+  console.log(appRoutes())
   return (
     <UserContext.Provider value={{ user, setUser }} >
       <Router>
-        <div>
-          <Nav />
-          <Switch>
-            <PublicRoute restricted={false} component={Landing} path="/" exact />
-            <PublicRoute restricted={true} component={Login, Register} />
-            <PrivateRoute component= {Profile, Chat, Friends,}
-            {/* <Route exact path={["/", "/landing"]}>
-              <Landing />
-            </Route>
-            {appRoutes()} */}
-            <Route>
-              <NoMatch />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+      <div>
+        <Nav />
+        <Switch>
+          <Route exact path={["/", "/landing"]}>
+            <Landing />
+          </Route>
+          <>
+          <Route exact path="/login">
+            <Login />
+          </Route>
+          <Route exact path="/register">
+            <Register />
+          </Route>
+          <Route exact path="/chat">
+            <Chat />
+          </Route>
+          <Route exact path="/profile">
+            <Profile />
+          </Route>
+          {/* {appRoutes()} */}
+          </>
+          <Route>
+            <NoMatch />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
     </UserContext.Provider>
   );
 }
+
+
 export default App;
+
+  // const PrivateRoute = ({component: Component,...rest}) =>{
+  //   return (
+  //     <Route {...rest} render={props =>{
+  //       isLoggedIn() ? 
+  //       <Component {...props} /> 
+  //       :
+  //       <Redirect to="/signin" />
+  //     }}
+  //     />
+  //   )
+  // }
+
+  // const PublicRoute = ({component: Component, restricted, ...rest}) =>{
+  //   return(
+  //     <Route {...rest} render ={props =>(
+  //       isLoggedIn() && restricted ?
+  //         <Redirect to="/profile" />
+  //         :
+  //         <Component {...props} />
+  //     )} 
+  //     />
+  //   )
+  // }
