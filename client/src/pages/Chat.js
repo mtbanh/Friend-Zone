@@ -6,6 +6,9 @@ import UserContext from "../utils/UserContext/userContext"
 let userData = window.localStorage.getItem('user')
 var userID = userData.id;
 
+import LogoutBtn from "../Components/LogoutBtn"
+
+
 const Chat = () => {
     console.log(`Here is the user: ${userData}`)
     const [chats, setChats] = useState([])
@@ -84,8 +87,11 @@ const Chat = () => {
         element.scrollIntoView({ behavior: 'smooth' })
     }
     return (
+        <>
+        <LogoutBtn />
+      
         <div className="container backgroundImage" >
-            <button onClick={handleClick}>New Chat</button>
+            <button onClick={handleClick}>New Chat</button> 
             <div className="row">
                     <ul className="list-group col-md-4 mt-4">
                         {chats.map(chat => {
@@ -115,9 +121,10 @@ const Chat = () => {
                     </div>
                 </div>
             </div>
-        </div>
-
-        
+        </div>  
+        </>
     )
+    
 }
+
 export default Chat;
