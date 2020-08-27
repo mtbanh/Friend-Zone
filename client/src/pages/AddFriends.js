@@ -8,7 +8,10 @@ import API from "../utils/API"
 
 
 
+
 const Addfriends = () => {
+  let userData = window.localStorage.getItem('user')
+  var userID = userData.id;
   const [profile, setProfile] = useState([])
   const state = {
 
@@ -38,6 +41,7 @@ const Addfriends = () => {
   const getProfiles = () => {
     API.getProfiles()
       .then(res => {
+        console.log(res.data)
         setProfile(res.data)
       })
   }
@@ -49,10 +53,7 @@ const Addfriends = () => {
       .then(function (response) {
         console.log(response)
       })
-    // API.getProfile("LOGGED IN ID GOES HERE").then (res => {
-    //   res.data.friends.push(id)
-    //   API.updateProfile(id, res.data).then (res => {})})
-
+      .catch(err => console.log(err))
   }
 
   return (
@@ -78,12 +79,12 @@ const Addfriends = () => {
         {
           profile.map((friend, i) => (
             <Cards
-              name={friend.name}
-              hobbies={friend.hobbies}
-              image={friend.image}
+              name={friend.firstName + " " +friend.lastName}
+              hobby={friend.hobby}
+              image={friend.files}
               id={friend.id}
 
-              addBuddy={addBuddy}
+              addBuddy={() =>addBuddy(friend.id)}
               key={i}
             />
           ))
