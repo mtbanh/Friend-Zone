@@ -3,13 +3,13 @@ import React, { useState, useEffect, createRef, useContext } from "react";
 import "./Chat.css";
 import API from "../utils/API";
 import UserContext from "../utils/UserContext/userContext"
-let userData = window.localStorage.getItem('user')
-var userID = userData.id;
-
 import LogoutBtn from "../Components/LogoutBtn"
 
 
+
 const Chat = () => {
+    let userData = window.localStorage.getItem('user')
+    var userID = userData.id;
     console.log(`Here is the user: ${userData}`)
     const [chats, setChats] = useState([])
     var [friendName, setFriendName] = useState(0);
