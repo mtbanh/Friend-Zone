@@ -46,7 +46,8 @@ class Profile extends Component {
       console.log(this.state)
       API.createProfile(this.state)
         .then(() => {
-
+          console.log(`User profile created`)
+          // window.location.replace("/AddFriends")
         })
         .catch(err => console.log(err))
     }
