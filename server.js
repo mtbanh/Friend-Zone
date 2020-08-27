@@ -6,7 +6,7 @@ var session = require("express-session");
 const passport = require("passport")
 // var initializePassport = require("./config/passport");
 const flash = require("express-flash");
-var passport = require("./config/passport");
+// var passport = require("./config/passport");
 // var profileSeed = require("./seeders")
 const app = express()
 app.use(express.urlencoded({ extended: true }))
@@ -125,7 +125,7 @@ app.use(flash())
 
 app.use(routes);
 
-db.sequelize.sync({ force: true }).then(function () {
+db.sequelize.sync({ force: false }).then(function () {
     db.Profile.bulkCreate(profileSeed);
     app.listen(PORT, function () {
         console.log("Server listening on localhost:" + PORT)

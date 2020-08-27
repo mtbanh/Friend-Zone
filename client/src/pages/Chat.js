@@ -1,10 +1,15 @@
-import React, { useState, useEffect, createRef } from "react";
+import React, { useState, useEffect, createRef, useContext } from "react";
 // import ScrollToBottom from 'react-scroll-to-bottom';
 import "./Chat.css";
 import API from "../utils/API";
+import UserContext from "../utils/UserContext/userContext"
 var userID = 1;
 
 const Chat = () => {
+    // const {user} = useContext(UserContext);
+    // console.log(UserContext)
+    let userData = window.localStorage.getItem('user')
+    console.log(`Here is the user: ${userData}`)
     const [chats, setChats] = useState([])
     var [friendName, setFriendName] = useState(0);
     const [userName, setUserName] = useState(userID);
@@ -113,6 +118,7 @@ const Chat = () => {
                 </div>
             </div>
         </div>
+
         
     )
 }

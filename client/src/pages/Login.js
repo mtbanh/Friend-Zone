@@ -4,10 +4,15 @@ import "./login.css";
 import UserContext from "../utils/UserContext/userContext";
 
 
-const Login = () => {
+const Login = (props) => {
 
     const [userSigninObj, setUserSigninObj] = useState({})
-    const {setUser} = useContext(UserContext)
+    // const   { setUser }  = useContext(UserContext)
+    const   { setUser }  = props;
+    console.log(props.setUser)
+    console.log(props)
+    const   ctx  = useContext(UserContext)
+    
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -21,19 +26,20 @@ const Login = () => {
             API.findUser(userSigninObj)
                 .then(({data: userData}) => {
                     console.log(`data passed to route`)
+                    console.log(ctx)
                     // const LoggedIn = (userData) =>{
                     //     if (userData !== null){
                     //         return true
                     //     }
                     // }
+                    console.log(userData)
+                    console.log(userData.id)
                     setUser(userData);
+                    window.localStorage.setItem('user', JSON.stringify(userData))
                 })
                 .catch(err => console.log(err))
         }
     }
-    // if(messages.error){
-    //     return errorMessages
-    // }
 
     return (
         <div class="container-fluid">
