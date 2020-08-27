@@ -39,7 +39,7 @@ class Profile extends Component {
   };
 
   handleFormSubmit = event => {
-    console.log(event)
+    // console.log(event)
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
     if (this.state.firstName && this.state.lastName && this.state.age && this.state.bio && this.state.hobby) {

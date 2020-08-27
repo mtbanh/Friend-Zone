@@ -17,6 +17,7 @@ export default {
   },
   // Profile
   createProfile: (profile) => {
+    console.log(profile)
     return axios.post ("api/profile", profile);
   },
   getProfiles: () => {

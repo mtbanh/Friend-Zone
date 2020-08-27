@@ -2,19 +2,20 @@
 const db = require("../models");
 
 
-module.exports = {
-    createProfile: (req,res) => {
-        console.log(req.body);
-        db.Profile.create(req.body)
-            .then(() => {
-                console.log(`Profile created`)
-            })
-            .catch(err => {
-                res.status(422).json(err)
-                console.log(`Error profile user`)
-            })
-    } 
-    }
+// module.exports = {
+//     createProfile: (req,res) => {
+//         console.log(req.body);
+//         db.Profile.create(req.body)
+//             .then(() => {
+//                 console.log(`Profile created`)
+//                 dbModel => res.json(dbModel)
+//             })
+//             .catch(err => {
+//                 res.status(422).json(err)
+//                 console.log(`Error profile user`)
+//             })
+//     } 
+//     }
 // const db = require("../models");
 
 module.exports = {
@@ -24,6 +25,7 @@ module.exports = {
           .catch(err => res.status(422).json(err));
       },
       createProfile: function(req, res) {
+        //   console.log(req.body)
         db.Profile.create(req.body)
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
