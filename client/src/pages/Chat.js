@@ -6,8 +6,10 @@ import UserContext from "../utils/UserContext/userContext"
 var userID = 1;
 
 const Chat = () => {
-    const {user} = useContext(UserContext);
-    console.log(UserContext)
+    // const {user} = useContext(UserContext);
+    // console.log(UserContext)
+    let userData = window.localStorage.getItem('user')
+    console.log(`Here is the user: ${userData}`)
     const [chats, setChats] = useState([])
     var [friendName, setFriendName] = useState(0);
     const [userName, setUserName] = useState(userID);

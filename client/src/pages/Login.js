@@ -33,15 +33,13 @@ const Login = (props) => {
                     //     }
                     // }
                     console.log(userData)
+                    console.log(userData.id)
                     setUser(userData);
                     window.localStorage.setItem('user', JSON.stringify(userData))
                 })
                 .catch(err => console.log(err))
         }
     }
-    // if(messages.error){
-    //     return errorMessages
-    // }
 
     return (
         <div class="container-fluid">

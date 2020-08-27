@@ -31,39 +31,6 @@ function App() {
     console.log("here is the user:", user)
   }, [user]);
 
-  // function isLoggedIn (){
-  //   console.log(user)
-  //   if(user !== null){
-  //     return true
-  //   }
-  // };
-
-  function appRoutes() {
-    return user ?
-      <>
-        <Route exact path="/chat">
-          <Chat />
-        </Route>
-
-        <Route exact path="/addFriends">
-          <AddFriends />
-        </Route>
-        <Route exact path="/profile">
-          <Profile />
-        </Route>
-      </>
-      :
-      <>
-        <Route exact path="/login">
-          <Login />
-        </Route>
-        <Route exact path="/register">
-          <Register />
-        </Route>
-      </>
-
-  }
-  // console.log(appRoutes())
   return (
     <UserContext.Provider value={user} >
       {console.log(user)}
@@ -94,7 +61,6 @@ function App() {
                 </Route>
                 </>
               }
-              {/* {appRoutes} */}
             </>
             <Route>
               <NoMatch />
@@ -109,26 +75,4 @@ function App() {
 
 export default App;
 
-  // const PrivateRoute = ({component: Component,...rest}) =>{
-  //   return (
-  //     <Route {...rest} render={props =>{
-  //       isLoggedIn() ? 
-  //       <Component {...props} /> 
-  //       :
-  //       <Redirect to="/signin" />
-  //     }}
-  //     />
-  //   )
-  // }
-
-  // const PublicRoute = ({component: Component, restricted, ...rest}) =>{
-  //   return(
-  //     <Route {...rest} render ={props =>(
-  //       isLoggedIn() && restricted ?
-  //         <Redirect to="/profile" />
-  //         :
-  //         <Component {...props} />
-  //     )} 
-  //     />
-  //   )
-  // }
+  
