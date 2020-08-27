@@ -1,11 +1,13 @@
 import React from "react";
 import "./style.css";
+// import API from "../utils/API";
 
 
-// function matches () 
 
 
 const Cards = props =>{
+  
+  
     return(
         <div className="card" >
         <div className="img-container" style={{display: 'flex', justifyContent: 'center'}}>
@@ -17,11 +19,11 @@ const Cards = props =>{
               <strong>Name:</strong> {props.name}
             </li>
             <li>
-              <strong>Hobbies:</strong> {props.hobbies}
+              <strong>Hobby:</strong> {props.hobbies}
             </li>
           </ul>
         </div>
-        <span onClick={() => props.addFriend(props.id)} className="btn btn-info add">
+        <span onClick={() => props.addBuddy(props.id)} className="btn btn-info add">
           Add to Friend Zone!
         </span>
       </div>

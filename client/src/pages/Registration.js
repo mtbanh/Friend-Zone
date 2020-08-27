@@ -11,14 +11,16 @@ const Register = () => {
         setUserProfileObj({ ...userProfileObj, [name]: value })
     };
 
+
     const handleFormSubmit = (event) => {
         event.preventDefault();
         console.log(userProfileObj);
         if (userProfileObj.name && userProfileObj.email && userProfileObj.password) {
             API.createUser( userProfileObj)
                 .then(() => {
-                    // console.log(`data passed to route`)
-                    // window.location.replace("/login")
+                    console.log(`user created`)
+                    window.location.replace("/login")
+
                     // this.setState({redirectTo:"/login"})
                 })
                 .catch(err => console.log(err))

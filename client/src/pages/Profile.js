@@ -3,7 +3,7 @@ import "./ProfileStyle.css"
 import API from "../utils/API"
 // import { client } from "filestack-react";
 import ReactFilestack from "filestack-react";
-
+import LogoutBtn from "../Components/LogoutBtn"
 
 const apiKey = "AXsVOdIjfR3eVPnGtz0CLz"
 // const client = filestack.init(apiKey)
@@ -57,6 +57,8 @@ class Profile extends Component {
     const { files } = this.state;
 
     return (
+      <>
+      <LogoutBtn />
       <div className="container">
         <h1>Profile</h1>
         <hr></hr>
@@ -180,7 +182,7 @@ class Profile extends Component {
           </form>
         </div>
       </div>
-
+            </>
     );
   }
 }

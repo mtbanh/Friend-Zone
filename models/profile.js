@@ -6,6 +6,12 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER(4),
             allowNull: false,
         },
+        friends_list:{
+            type: DataTypes.JSON(2000)
+        },
+        hobby: {
+            type: DataTypes.STRING(2000)
+        },
         bio: {
             type: DataTypes.STRING(1000)
         },
@@ -36,11 +42,11 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.JSON(1000)
         }
     });
-    Profile.associate = function (models){
-        // Profile can't be created w/o an user due to foreign key constraint
-        Profile.belongsTo(models.User,{
-            foreignKey: { allowNull: false}
-        });
-    }
+    // Profile.associate = function (models){
+    //     // Profile can't be created w/o an user due to foreign key constraint
+    //     Profile.belongsTo(models.User,{
+    //         foreignKey: { allowNull: false}
+    //     });
+    // }
     return Profile;
 }

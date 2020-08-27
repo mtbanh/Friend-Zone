@@ -12,18 +12,10 @@ module.exports = {
                 .catch(err => {
                     res.status(422).json(err)
                     console.log(`Error creating user`)
+                    
                 })
         }
 
-    // findUser: (req, res) => {
-    //     console.log(req.user)
-        // db.User.
-        //     .then(() => next())
-        //     .catch(err => {
-        //         res.status(422).json(err)
-        //         console.log(`Error finding user`)
-        //     })
-    
 }
 
     // try {
