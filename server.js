@@ -23,100 +23,47 @@ const profileSeed = [{
     age: 37,
     bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
     hobby: "Scale Miniature Building",
-    files: ["https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"],
+    files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     friends_list: []
     
   },
   {
-    name: "Cecilia Curry",
-    gender: "female",
-    age: 25,
-    friends_list: [],
-    hobby: "Scale Miniature Building",
+    firstName: "Mai ",
+    lastName:"Banh",
+    age: 37,
     bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
-    img_url: "https://images.pexels.com/photos/3622643/pexels-photo-3622643.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    hobby: "Scale Miniature Building",
+    files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    friends_list: []
   },
   {
-    name: "Frank Bigelow",
-    gender: "male",
-    age: 52,
-    friends_list: [],
-    hobby: "Scale Miniature Building",
+    firstName: "Jane ",
+    lastName:"Doe",
+    age: 37,
     bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
-    img_url: "https://www.assembly.ca.gov/sites/assembly.ca.gov/files/memberphotos/AD05-Frank_Bigelow.jpg"
+    hobby: "Scale Miniature Building",
+    files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    friends_list: []
   },
   {
-    name: "Tasha Horvath",
-    gender: "female",
-    age: 45,
-    friends_list: [],
-    hobby: "Scale Miniature Building",
+    firstName: "Abbott ",
+    lastName:"Doe",
+    age: 37,
     bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
-    img_url: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    hobby: "Scale Miniature Building",
+    files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    friends_list: []
   },
   {
-    name: "Autumn Burke",
-    gender: "female",
-    age: 27,
-    friends_list: [],
-    hobby: "Scale Miniature Building",
+    firstName: "Ben ",
+    lastName:"Berman",
+    age: 37,
     bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
-    img_url: "https://www.assembly.ca.gov/sites/assembly.ca.gov/files/memberphotos/ad62_burke2.jpg"
-  },
-  {
-    name: "Ian Calderon",
-    gender: "male",
-    age: 22,
-    friends_list: [],
     hobby: "Scale Miniature Building",
-    bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
-    img_url: "https://www.assembly.ca.gov/sites/assembly.ca.gov/files/memberphotos/AD57.jpg"
-  },
-  {
-    name: "Cristina Garcia",
-    gender: "female",
-    age: 27,
-    friends_list: [],
-    hobby: "Scale Miniature Building",
-    bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
-    img_url: "https://images.pexels.com/photos/1987301/pexels-photo-1987301.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-  },
-  {
-    name: "Sabrina Cervantes",
-    gender: "female",
-    age: 29,
-    friends_list: [],
-    hobby: "Scale Miniature Building",
-    bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
-    img_url: "https://www.assembly.ca.gov/sites/assembly.ca.gov/files/memberphotos/ad60_cervantes_roster150_20161205.jpg"
-  },
-  {
-    name: "Ed Chau",
-    gender: "male",
-    age: 51,
-    friends_list: [],
-    hobby: "Scale Miniature Building",
-    bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
-    img_url: "https://www.assembly.ca.gov/sites/assembly.ca.gov/files/memberphotos/AD49-Chau.jpg"
-  },
-  {
-    name: "Laura Friedman",
-    gender: "female",
-    age: 25,
-    friends_list: [],
-    hobby: "Scale Miniature Building",
-    bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
-    img_url: "https://www.assembly.ca.gov/sites/assembly.ca.gov/files/memberphotos/ad43_friedman.jpg"
-  },
-  {
-    name: "Jesse Gabriel",
-    gender: "male",
-    age: 39,
-    friends_list: [],
-    hobby: "Scale Miniature Building",
-    bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
-    img_url: "https://www.assembly.ca.gov/sites/assembly.ca.gov/files/memberphotos/jgabriel.jpg"
+    files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    friends_list: []
   }
+  
 ]
 
 app.use(session({ secret: "keyboard cat", resave: false, saveUninitialized: false }));
