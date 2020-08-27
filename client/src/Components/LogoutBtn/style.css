@@ -1,0 +1,10 @@
+#LogoutBtn{
+    position:fixed;
+    top: .5em;
+    right: 5em
+}
+
+#LogoutBtn:hover {
+    -webkit-animation: hover 1200ms linear 2 alternate;
+    animation: hover 1200ms linear 2 alternate;
+}

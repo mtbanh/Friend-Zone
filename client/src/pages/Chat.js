@@ -2,7 +2,8 @@ import React, { useState, useEffect, createRef, useContext } from "react";
 // import ScrollToBottom from 'react-scroll-to-bottom';
 import "./Chat.css";
 import API from "../utils/API";
-import UserContext from "../utils/UserContext/userContext"
+import LogoutBtn from "../Components/LogoutBtn"
+// import UserContext from "../utils/UserContext/userContext"
 var userID = 1;
 
 const Chat = () => {
@@ -86,8 +87,11 @@ const Chat = () => {
         element.scrollIntoView({ behavior: 'smooth' })
     }
     return (
+        <>
+        <LogoutBtn />
+      
         <div className="container backgroundImage" >
-            <button onClick={handleClick}>New Chat</button>
+            <button onClick={handleClick}>New Chat</button> 
             <div className="row">
                     <ul className="list-group col-md-4 mt-4">
                         {chats.map(chat => {
@@ -117,9 +121,10 @@ const Chat = () => {
                     </div>
                 </div>
             </div>
-        </div>
-
-        
+        </div>  
+        </>
     )
+    
 }
+
 export default Chat;

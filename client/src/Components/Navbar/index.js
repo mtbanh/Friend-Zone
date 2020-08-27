@@ -10,7 +10,7 @@ class Nav extends React.Component {
         return (
             <nav class="navbar navbar-dark bg-dark">
                 <Link class="navbar-brand" id="brand">
-                    <img src="..\src\assets\img\logo.svg" width="30" height="30" class="d-inline-block align-top" href="/landing" loading="lazy" />
+                    {/* <img src="" width="30" height="30" class="d-inline-block align-top" href="/landing" loading="lazy" /> */}
                 FriendZone
 
               </Link>

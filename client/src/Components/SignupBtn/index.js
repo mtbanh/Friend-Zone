@@ -3,6 +3,7 @@ import "./style.css";
 import {Link} from "react-router-dom";
 
 class SignupBtn extends React.Component {
+    
     render() {
         return (
             <Link to ={"register"}>
