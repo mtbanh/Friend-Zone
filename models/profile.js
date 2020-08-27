@@ -1,30 +1,39 @@
 //Creating profile model
 module.exports = function(sequelize, DataTypes) {
     var Profile = sequelize.define("Profile", {
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        // The gender can't be null
-        gender: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
+       
         age: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER(4),
             allowNull: false,
         },
         bio: {
             type: DataTypes.STRING(1000)
         },
-        img_url:{
+       
+        files:{
             type: DataTypes.STRING(1000)        
         },
-        hobbies: {
-            type: DataTypes.JSON(2000)
+        firstName: {
+            type: DataTypes.STRING(2000),
+            allowNull: false,
         },
+        hobby: {
+            type: DataTypes.JSON(1000)
+        },
+        lastName: {
+            type: DataTypes.STRING(1000),
+            allowNull: false,
+        },
+        
+        // gender: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        // },
+       
+       
+       
         friends_list:{
-            type: DataTypes.JSON(2000)
+            type: DataTypes.JSON(1000)
         }
     });
     Profile.associate = function (models){
