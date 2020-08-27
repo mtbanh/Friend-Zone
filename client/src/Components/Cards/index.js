@@ -19,13 +19,13 @@ const Cards = props =>{
               <strong>Name:</strong> {props.name}
             </li>
             <li>
-              <strong>Hobby:</strong> {props.hobbies}
+              <strong>Hobby:</strong> {props.hobby}
             </li>
           </ul>
         </div>
-        <span onClick={() => props.addBuddy(props.id)} className="btn btn-info add">
+        <button onClick={() => props.addBuddy} className="btn btn-info add">
           Add to Friend Zone!
-        </span>
+        </button>
       </div>
     );
 }
