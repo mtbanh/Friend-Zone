@@ -1,10 +1,16 @@
-import React, { useState, useEffect, createRef } from "react";
+import React, { useState, useEffect, createRef, useContext } from "react";
 // import ScrollToBottom from 'react-scroll-to-bottom';
 import "./Chat.css";
 import API from "../utils/API";
-var userID = 1;
+import UserContext from "../utils/UserContext/userContext"
+let userData = window.localStorage.getItem('user')
+var userID = userData.id;
+
+import LogoutBtn from "../Components/LogoutBtn"
+
 
 const Chat = () => {
+    console.log(`Here is the user: ${userData}`)
     const [chats, setChats] = useState([])
     var [friendName, setFriendName] = useState(0);
     const [userName, setUserName] = useState(userID);
@@ -28,7 +34,6 @@ const Chat = () => {
         API.getChats()
             .then(res => {
                 var array = [];
-                console.log(userName)
                 for(var i=0; i<res.data.length; i++){
                     if(JSON.parse(res.data[i].user1) === userName){
                         array.push(res.data[i])
@@ -57,11 +62,12 @@ const Chat = () => {
         var temp = event.target.getAttribute("data-id");
         loadTransactions(temp)
         setChatId(temp);
-        setFriendName(event.target.getAttribute("data-name"))
+        API.getProfile(event.target.getAttribute("data-name"))
+            .then(res => {
+                setFriendName(res.data.name)
+            })
         setShowChat(true)
         updateScroll();
-        // var element = scroller.current
-        // element.scrollTo(0, element.height)
     }
 
     function sendChatTransaction(event) {
@@ -81,8 +87,11 @@ const Chat = () => {
         element.scrollIntoView({ behavior: 'smooth' })
     }
     return (
+        <>
+        <LogoutBtn />
+      
         <div className="container backgroundImage" >
-            <button onClick={handleClick}>New Chat</button>
+            <button onClick={handleClick}>New Chat</button> 
             <div className="row">
                     <ul className="list-group col-md-4 mt-4">
                         {chats.map(chat => {
@@ -112,8 +121,10 @@ const Chat = () => {
                     </div>
                 </div>
             </div>
-        </div>
-        
+        </div>  
+        </>
     )
+    
 }
+
 export default Chat;
