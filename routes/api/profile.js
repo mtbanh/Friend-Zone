@@ -1,24 +1,40 @@
 const router = require("express").Router();
-<<<<<<< HEAD
-const profile = require("../../controllers/profileController");
-
-router.route("/")
-    .post( profile.createProfile)
-
-
-   
-
-module.exports = router
-=======
 const profileController = require("../../controllers/profileController");
+// const profile = require("../../models");
+// const db = require("../../models");
+
 // Matches with "/api/chat"
 router
   .route("/")
   .get(profileController.findAll)
-  .post(profileController.create);
+  .post(profileController.createProfile);
 
 router
   .route("/:id")
   .get(profileController.getById)
+  .put(profileController.profileUpdate)
+
+// router.get("/", function(req, res){
+//   profile.find()
+//   .then(function(records){
+//   res.json(records)
+//   })
+// })
+// router.put("/api/profile", function(req, res){
+//   console.log("req" + req)
+//   var user = req.params.id
+//   console.log("req.body id: " + req.body.id)
+//   console.log("user" + user)
+//   db.Profile.update({ friends_list: req.body.id },{where: {
+//     id: user
+//   }
+// })
+//   .then(function(dbData){
+//     console.log(dbData)
+//     res.json(dbData)
+//   })
+//   .catch(err => console.log ("error finding"))
+// })
 module.exports = router;
->>>>>>> 51ef9d710e19053c5835f5952b4d5bf087cebf98
+
+// {friends_list: req.body.id

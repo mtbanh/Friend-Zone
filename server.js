@@ -116,7 +116,7 @@ const profileSeed = [{
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.use(require("./routes/api/profile.js"))
 app.use(routes);
 
 db.sequelize.sync({ force: true }).then(function () {
