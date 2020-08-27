@@ -15,11 +15,20 @@ import AddFriends from "./pages/AddFriends";
 import UserContext from "./utils/UserContext/userContext"
 
 
+
 function App() {
-  const [user, setUser] = useState({})
-  
+
+  // Dumpling code
+  // Try to get user from local storage
+  let userData = window.localStorage.getItem('user')
+  if (userData) userData = JSON.parse(userData)
+  else userData = {}
+  const [user, setUser] = useState({ ...userData })
+
+  // const [user, setUser] = useState({})
+
   useEffect(() => {
-    console.log(user)
+    console.log("here is the user:", user)
   }, [user]);
 
   // function isLoggedIn (){
@@ -30,12 +39,12 @@ function App() {
   // };
 
   function appRoutes() {
-   return user ?
+    return user ?
       <>
         <Route exact path="/chat">
           <Chat />
         </Route>
-        
+
         <Route exact path="/addFriends">
           <AddFriends />
         </Route>
@@ -43,7 +52,7 @@ function App() {
           <Profile />
         </Route>
       </>
-   :
+      :
       <>
         <Route exact path="/login">
           <Login />
@@ -52,39 +61,47 @@ function App() {
           <Register />
         </Route>
       </>
-   
+
   }
-  console.log(appRoutes())
+  // console.log(appRoutes())
   return (
-    <UserContext.Provider value={{ user, setUser }} >
+    <UserContext.Provider value={user} >
+      {console.log(user)}
       <Router>
-      <div>
-        <Nav />
-        <Switch>
-          <Route exact path={["/", "/landing"]}>
-            <Landing />
-          </Route>
-          <>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/register">
-            <Register />
-          </Route>
-          <Route exact path="/chat">
-            <Chat />
-          </Route>
-          <Route exact path="/profile">
-            <Profile />
-          </Route>
-          {/* {appRoutes()} */}
-          </>
-          <Route>
-            <NoMatch />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+        <div>
+          <Nav />
+          <Switch>
+            <Route exact path={["/", "/landing"]}>
+              <Landing />
+            </Route>
+            <>
+              <Route exact path="/login">
+                <Login setUser={setUser} />
+              </Route>
+              <Route exact path="/register">
+                <Register />
+              </Route>
+              {user && Object.keys(user).length && 
+                <>
+                <Route exact path="/chat">
+                  <Chat />
+                </Route>
+                <Route exact path="/profile">
+                  <Profile />
+                </Route>
+                <Route exact path="/addFriends">
+                  <AddFriends />
+                </Route>
+                </>
+              }
+              {/* {appRoutes} */}
+            </>
+            <Route>
+              <NoMatch />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </UserContext.Provider>
   );
 }
