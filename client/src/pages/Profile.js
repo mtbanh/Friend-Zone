@@ -45,8 +45,8 @@ class Profile extends Component {
     if (this.state.firstName && this.state.lastName && this.state.age && this.state.bio && this.state.hobby) {
       console.log(this.state)
       API.createProfile(this.state)
-    .then(() => {
-    
+    .then((res) => {
+      console.log(res)
     })
     .catch(err => console.log(err))
   }
