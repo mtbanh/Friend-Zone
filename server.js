@@ -121,7 +121,11 @@ const profileSeed = [{
 app.use(session({ secret: "keyboard cat", resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(require("./routes/api/profile.js"))
+
 app.use(flash())
+
 
 app.use(routes);
 

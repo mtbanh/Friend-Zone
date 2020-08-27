@@ -1,4 +1,6 @@
-const db = require("../models")
+
+const db = require("../models");
+
 
 module.exports = {
     createProfile: (req,res) => {
@@ -14,13 +16,14 @@ module.exports = {
     } 
     }
 // const db = require("../models");
+
 module.exports = {
     findAll: function(req, res) {
         db.Profile.findAll(req.query)
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
       },
-      create: function(req, res) {
+      createProfile: function(req, res) {
         db.Profile.create(req.body)
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
@@ -29,5 +32,13 @@ module.exports = {
         db.Profile.findById(req.params.id)
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
+      },
+      profileUpdate: function(req, res) {
+          db.Profile
+          .findOneAndUpdate({ _id: req.params.id }, req.body)
+          .then(dbModel=> res.json(dbModel))
+          .catch(err => res.status(422).json(err));
       }
 }
+
+
