@@ -2,14 +2,14 @@ import React, { useState, useEffect, createRef, useContext } from "react";
 // import ScrollToBottom from 'react-scroll-to-bottom';
 import "./Chat.css";
 import API from "../utils/API";
+import UserContext from "../utils/UserContext/userContext"
+let userData = window.localStorage.getItem('user')
+var userID = userData.id;
+
 import LogoutBtn from "../Components/LogoutBtn"
-// import UserContext from "../utils/UserContext/userContext"
-var userID = 1;
+
 
 const Chat = () => {
-    // const {user} = useContext(UserContext);
-    // console.log(UserContext)
-    let userData = window.localStorage.getItem('user')
     console.log(`Here is the user: ${userData}`)
     const [chats, setChats] = useState([])
     var [friendName, setFriendName] = useState(0);
@@ -34,7 +34,6 @@ const Chat = () => {
         API.getChats()
             .then(res => {
                 var array = [];
-                console.log(userName)
                 for(var i=0; i<res.data.length; i++){
                     if(JSON.parse(res.data[i].user1) === userName){
                         array.push(res.data[i])
@@ -63,11 +62,12 @@ const Chat = () => {
         var temp = event.target.getAttribute("data-id");
         loadTransactions(temp)
         setChatId(temp);
-        setFriendName(event.target.getAttribute("data-name"))
+        API.getProfile(event.target.getAttribute("data-name"))
+            .then(res => {
+                setFriendName(res.data.name)
+            })
         setShowChat(true)
         updateScroll();
-        // var element = scroller.current
-        // element.scrollTo(0, element.height)
     }
 
     function sendChatTransaction(event) {
