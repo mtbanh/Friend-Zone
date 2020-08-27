@@ -39,6 +39,10 @@ module.exports = {
           .then(dbModel=> res.json(dbModel))
           .catch(err => res.status(422).json(err));
       }
+    //   getById: function(req, res) {
+    //     db.Profile.findById(req.params.id)
+    //       .then(dbModel => res.json(dbModel))
+    //       .catch(err => res.status(422).json(err));
+    //   }
 }
-
 

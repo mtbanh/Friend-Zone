@@ -1,15 +1,7 @@
 //Creating profile model
 module.exports = function(sequelize, DataTypes) {
     var Profile = sequelize.define("Profile", {
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        // The gender can't be null
-        gender: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
+       
         age: {
             type: DataTypes.INTEGER(4),
             allowNull: false,
@@ -23,9 +15,32 @@ module.exports = function(sequelize, DataTypes) {
         bio: {
             type: DataTypes.STRING(1000)
         },
-        img_url:{
-            type: DataTypes.STRING(1000)
-        } 
+       
+        files:{
+            type: DataTypes.STRING(1000)        
+        },
+        firstName: {
+            type: DataTypes.STRING(2000),
+            allowNull: false,
+        },
+        hobby: {
+            type: DataTypes.JSON(1000)
+        },
+        lastName: {
+            type: DataTypes.STRING(1000),
+            allowNull: false,
+        },
+        
+        // gender: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        // },
+       
+       
+       
+        friends_list:{
+            type: DataTypes.JSON(1000)
+        }
     });
     // Profile.associate = function (models){
     //     // Profile can't be created w/o an user due to foreign key constraint

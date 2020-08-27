@@ -7,34 +7,34 @@ import LogoutBtn from "../Components/LogoutBtn"
 
 const apiKey = "AXsVOdIjfR3eVPnGtz0CLz"
 // const client = filestack.init(apiKey)
-let imgURL = "";
+// let imgURL = "";
 // const hobbies = []
 // const friendsList = []
 
 
 class Profile extends Component {
   // constructor(props) {
-    // super(props);
-    state = {
-      firstName: "",
-      lastName: "",
-      age: "",
-      bio: "",
-      hobby: "",
-      files: []
-    };
-  
+  // super(props);
+  state = {
+    firstName: "",
+    lastName: "",
+    age: "",
+    bio: "",
+    hobby: "",
+    files: []
+  };
+
 
   onFiles = ({ filesUploaded }) => {
     this.setState({ files: filesUploaded });
   };
 
-  handleInputChange = event => { 
+  handleInputChange = event => {
     console.log(event.target)
     const {
-      name,value
-    } = event.target 
-    this.setState ({[name]:value}) 
+      name, value
+    } = event.target
+    this.setState({ [name]: value })
     console.log(this.state)
   };
 
@@ -45,12 +45,12 @@ class Profile extends Component {
     if (this.state.firstName && this.state.lastName && this.state.age && this.state.bio && this.state.hobby) {
       console.log(this.state)
       API.createProfile(this.state)
-    .then(() => {
-    
-    })
-    .catch(err => console.log(err))
-  }
- 
+        .then(() => {
+
+        })
+        .catch(err => console.log(err))
+    }
+
   };
 
   render() {
@@ -69,19 +69,23 @@ class Profile extends Component {
                 <ReactFilestack
                   apikey={apiKey}
                   buttonText="Click me"
+                  mode={"pick"}
                   onSuccess={this.onFiles}
+                  name="files"
+                  value={this.state.files}
+                  onChange={this.handleInputChange}
                   preload={true}
+                  onError={(e) => console.log(e)}
                 />
               </div>
             </span>
           </div>
-
           <div>
-            <h6 className="greeting"> Upload a Picture </h6>
+            <h6 className="upload"> Upload a Picture </h6>
             {files.map((file, i) => {
               return (
                 <div key={i}>
-                  <div heading className={'m-3'}>
+                  <div className={'m-3'}>
                     <img className="profilePicture" alt={file.fileName} src={file.url} />
                   </div>
                 </div>
@@ -95,7 +99,7 @@ class Profile extends Component {
             <a className="panel-close close" data-dismiss="alert">×</a>
             <i className="fa fa-hand-peace-o"></i>
     Get ready to be freindZoned.
-  </div>
+        </div>
           <h3>Profile Info</h3>
           <form className="form-horizontal">
             <div className="form-group">
@@ -105,7 +109,7 @@ class Profile extends Component {
                   className="form-control"
                   type="text"
                   name="firstName"
-                  value= {this.state.firstName}
+                  value={this.state.firstName}
                   onChange={this.handleInputChange}
                   placeholder="Farley"
                 />
@@ -114,26 +118,26 @@ class Profile extends Component {
             <div className="form-group">
               <label className="col-lg-3 control-label">Last name:</label>
               <div className="col-lg-8">
-                <input 
-                className="form-control"
-                type="text"
-                name="lastName" 
-                value= {this.state.lastName}
-                onChange={this.handleInputChange} 
-                placeholder="Bacon"
+                <input
+                  className="form-control"
+                  type="text"
+                  name="lastName"
+                  value={this.state.lastName}
+                  onChange={this.handleInputChange}
+                  placeholder="Bacon"
                 />
               </div>
             </div>
             <div className="form-group">
               <label className="col-lg-3 control-label">Age:</label>
               <div className="col-lg-8">
-                <input 
-                className="form-control" 
-                type="text" 
-                name="age"
-                value={this.state.age}
-                onChange={this.handleInputChange} 
-                placeholder="25"
+                <input
+                  className="form-control"
+                  type="text"
+                  name="age"
+                  value={this.state.age}
+                  onChange={this.handleInputChange}
+                  placeholder="25"
                 />
               </div>
             </div>
@@ -141,7 +145,7 @@ class Profile extends Component {
               <label className="col-lg-3 control-label">Hobby:</label>
               <div className="col-lg-8">
                 <div className="ui-select">
-                  <select name= "hobby" value={this.state.hobby} onChange={this.handleInputChange}>
+                  <select name="hobby" value={this.state.hobby} onChange={this.handleInputChange}>
                     <option value="Scale Miniature Building">Scale Miniature Building</option>
                     <option value="Rock climbing">Rock clmbing</option>
                     <option value="Swimming">Swimming</option>
@@ -156,13 +160,13 @@ class Profile extends Component {
             <div className="form-group">
               <label className="col-md-3 control-label">Bio:</label>
               <div className="col-md-8">
-                <input 
-                class="form-control" 
-                type="text" 
-                name="bio"
-                value={this.state.bio} 
-                onChange={this.handleInputChange} 
-                placeholder="I like..."
+                <input
+                  class="form-control"
+                  type="text"
+                  name="bio"
+                  value={this.state.bio}
+                  onChange={this.handleInputChange}
+                  placeholder="I like..."
                 />
               </div>
             </div>
