@@ -9,8 +9,8 @@ const Login = (props) => {
     const [userSigninObj, setUserSigninObj] = useState({})
     // const   { setUser }  = useContext(UserContext)
     const   { setUser }  = props;
-    console.log(props.setUser)
-    console.log(props)
+    // console.log(props.setUser)
+    // console.log(props)
     const   ctx  = useContext(UserContext)
     
 
@@ -32,10 +32,16 @@ const Login = (props) => {
                     //         return true
                     //     }
                     // }
-                    console.log(userData)
-                    console.log(userData.id)
-                    setUser(userData);
-                    window.localStorage.setItem('user', JSON.stringify(userData))
+                    // console.log(userData)
+                    // console.log(userData.id)
+                    const loggedInUser = {
+                        id: userData.id,
+                        name: userData.name
+                    }
+                    console.log(loggedInUser)
+                    setUser(loggedInUser);
+                    window.localStorage.setItem('user', JSON.stringify(loggedInUser))
+                    window.location.replace("/profile")
                 })
                 .catch(err => console.log(err))
         }
