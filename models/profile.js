@@ -28,7 +28,7 @@ module.exports = function(sequelize, DataTypes) {
         },
         
         friends_list:{
-            type: DataTypes.JSON(2000)
+            type: DataTypes.STRING(4)
         },
         
         
