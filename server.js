@@ -23,7 +23,7 @@ const profileSeed = [{
     age: 37,
     bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
     hobby: "Scale Miniature Building",
-    files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    files: "https://www.assembly.ca.gov/sites/assembly.ca.gov/files/memberphotos/AD05-Frank_Bigelow.jpg",
     friends_list: []
     
   },
@@ -36,13 +36,13 @@ const profileSeed = [{
     files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     friends_list: []
   },
-  {
+  { 
     firstName: "Jane ",
     lastName:"Doe",
     age: 37,
     bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
     hobby: "Scale Miniature Building",
-    files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    files: "https://www.assembly.ca.gov/sites/assembly.ca.gov/files/memberphotos/ad62_burke2.jpg",
     friends_list: []
   },
   {
@@ -51,7 +51,7 @@ const profileSeed = [{
     age: 37,
     bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
     hobby: "Scale Miniature Building",
-    files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    files: "https://www.assembly.ca.gov/sites/assembly.ca.gov/files/memberphotos/AD49-Chau.jpg",
     friends_list: []
   },
   {
@@ -60,10 +60,9 @@ const profileSeed = [{
     age: 37,
     bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
     hobby: "Scale Miniature Building",
-    files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    files: "https://www.assembly.ca.gov/sites/assembly.ca.gov/files/memberphotos/jgabriel.jpg",
     friends_list: []
   }
-  
 ]
 
 app.use(session({ secret: "keyboard cat", resave: false, saveUninitialized: false }));

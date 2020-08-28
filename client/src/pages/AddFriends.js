@@ -83,7 +83,6 @@ const Addfriends = () => {
               hobby={friend.hobby}
               image={friend.files}
               id={friend.id}
-
               addBuddy={() =>addBuddy(friend.id)}
               key={i}
             />
@@ -120,7 +119,7 @@ export default Addfriends;
   //         swipeable={false}
   //         draggable={false}
   //         showDots={true}
-  //         responsive={responsive}
+  //        - responsive={responsive}
   //         ssr={true} // means to render carousel on server-side.
   //         infinite={true}
   //         //   autoPlay={this.props.deviceType !== "mobile" ? true : false}
