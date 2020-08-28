@@ -12,12 +12,43 @@ export default {
   postChatTransaction: (chatTran)=>{
     return axios.post("api/chat-transaction", chatTran);
   },
+  getChatsTransaction: (chatTran)=>{
+    return axios.get("api/chat-transaction", chatTran);
+  },
+  // Profile
+  createProfile: (profile) => {
+    console.log(profile)
+    return axios.post ("api/profile", profile);
+  },
+  getProfiles: () => {
+    return axios.get ("api/profile/");
+  },
+  getProfile: (id) => {
+    return axios.get ("api/profile/"+id);
+  },
   getChatsTransaction: ()=>{
     return axios.get("api/chat-transaction");
   },
   getChatsTransactionId:  (chatId) =>  {
     return axios.get("api/chat-transaction/" + chatId);
+  },
+
+  createUser: (userData)=>{
+    console.log(userData)
+    return axios.post("api/register", userData)
+  },
+
+  findUser:  ({email, password}) =>{
+    console.log(email,password)
+
+    return axios.post("api/login", {email, password})
+  },
+  updateProfile: (id) => {
+    console.log(`the friendId is ${id}`)
+    return axios.put("api/profile/" , id);
+  },  
+  getUserData: ()=>{
+    return axios.get("")
   }
 
-  
 }

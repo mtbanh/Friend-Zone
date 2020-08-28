@@ -1,18 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createRef, useContext } from "react";
+// import ScrollToBottom from 'react-scroll-to-bottom';
+import "./Chat.css";
 import API from "../utils/API";
+import UserContext from "../utils/UserContext/userContext"
+import LogoutBtn from "../Components/LogoutBtn"
+
 
 
 const Chat = () => {
+    let userData = window.localStorage.getItem('user')
+    var userID = userData.id;
+    console.log(`Here is the user: ${userData}`)
     const [chats, setChats] = useState([])
     var [friendName, setFriendName] = useState(0);
-    const [userName, setUserName] = useState(0);
+    const [userName, setUserName] = useState(userID);
     var [transactions, setTransactions] = useState([])
     const [chatId, setChatId] = useState(0)
     const [showChat, setShowChat] = useState(false)
+    const scroller = createRef();
 
     useEffect(() => {
-        if (!loadChats()) { console.log("Nothing to see here") }
-        setUserName(1)
+        loadChats()
     }, []);
 
     function loadTransactions(id) {
@@ -25,11 +33,21 @@ const Chat = () => {
     const loadChats = () => {
         API.getChats()
             .then(res => {
-                setChats(res.data)
+                var array = [];
+                for(var i=0; i<res.data.length; i++){
+                    if(JSON.parse(res.data[i].user1) === userName){
+                        array.push(res.data[i])
+                    }
+                    if(JSON.parse(res.data[i].user2) === userName){
+                        array.push(res.data[i])
+                    }
+                }
+                setChats(array)
             })
     };
+
     function handleClick() {
-        API.postChat({ user1: userName, user2: 4 })
+        API.postChat({ user1: userName, user2: 5 })
             .then(res => {
                 var newChat = chats
                 newChat.push(res.data)
@@ -40,65 +58,73 @@ const Chat = () => {
     }
 
     function displayChat(event) {
+        event.preventDefault();
         var temp = event.target.getAttribute("data-id");
         loadTransactions(temp)
         setChatId(temp);
-        setFriendName(event.target.getAttribute("data-name"))
+        API.getProfile(event.target.getAttribute("data-name"))
+            .then(res => {
+                setFriendName(res.data.name)
+            })
         setShowChat(true)
+        updateScroll();
     }
 
     function sendChatTransaction(event) {
         event.preventDefault();
-        var chat = {text: event.target.children[0].value,  userID: userName, ChatId: chatId}
+        var chat = { text: event.target.children[0].value, userID: userName, ChatId: chatId }
+        event.target.children[0].value = "";
         API.postChatTransaction(chat)
             .then(res => {
-                var newTran = transactions
+                var newTran = [...transactions]
                 newTran.push(res.data)
                 setTransactions(newTran)
-                window.location.reload(false);
             })
     }
 
+    function updateScroll() {
+        var element = scroller.current
+        element.scrollIntoView({ behavior: 'smooth' })
+    }
     return (
-        <div className="container">
-            <button onClick={handleClick}>New Chat</button>
+        <>
+        <LogoutBtn />
+      
+        <div className="container backgroundImage" >
+            <button onClick={handleClick}>New Chat</button> 
             <div className="row">
-                <ul className="list-group col-md-3">
-                    {chats.map(chat => {
-                        return (
-                            <li key={chat.id} onClick={displayChat} data-id={chat.id} data-name={chat.user2} className="list-group-item">Chat with user: {chat.user2}</li>
-                        )
-                    })}
-                </ul>
-                <div className="row">
-                    <h3 style={{ display: showChat ? "block" : "none" }} className = "col-md-12">Chat with: {friendName}</h3>
-                    <div className="col-md-8" style = {{height: "300px", overflow: "scroll"}}>
-                    {transactions.map(tran => {
-                        {
-                            if(tran.userID == userName){
+                    <ul className="list-group col-md-4 mt-4">
+                        {chats.map(chat => {
                             return (
-                                <div className = "card">
-                                    <div className = 'bg-info card-body'  key={tran.id}>{tran.text}</div>
-                                </div>
+                                    <li key={chat.id} onClick={displayChat} data-id={chat.id} data-name={chat.user2} style = {{cursor : "pointer"}}className="list-group-item bg-secondary text-white border-white">Chat with user: {chat.user2}</li>
                             )
-                        }
-                        else{
+                        })}
+                    </ul>
+                <div className="col-md-8 mt-4 bg-dark text-white rounded">
+                    <h3 style={{ display: showChat ? "block" : "none" }} >Chat with: {friendName}</h3>
+                    <h3 style = {{display: !showChat ? "inline-block" : "none", padding: "30px"}}>Click on a chat to display</h3>
+                    <div style={{ height: "300px", overflow: "scroll" }}>
+                        {transactions.map(tran => {
                             return (
-                                <div className = "card">
-                                    <div className = 'bg-secondary card-body'  key={tran.id}>{tran.text}</div>
-                                </div>
+                                    <div key={tran.id} className="card">
+                                        <div className={JSON.parse(tran.userID) === userName ? "bg-info card-body" : "bg-secondary card-body"}>{tran.timeStamp}<div style={{ witdth: "100%", height: "1px", backgroundColor: "white" }}></div>{tran.text}</div>
+                                    </div>
                             )
-                        }}
-                        
-                    })}
+                        })}
+                       <div ref = {scroller}></div>
                     </div>
-                    <form style={{ display: showChat ? "block" : "none" }} onSubmit = {sendChatTransaction}>
-                        <input type="text" className="form-control" placeholder="Enter a chat"></input>
-                        <button className="btn btn-outline-secondary" type="submit">Send</button>
-                    </form>
+                    <div className="row">
+                        <form style={{ display: showChat ? "inline-block" : "none", width: "100%", padding: "20px" }} onSubmit={sendChatTransaction}>
+                            <input type="text" className=" col-md-9 rounded-left" placeholder="Enter a chat" style={{ height: "38px", paddingBottom: "4px" }} />
+                            <button className="bg-secondary col-md-3 btn text-white border" style={{ border: "solid 1px black", borderTopRightRadius: "5px", borderBottomRightRadius: "5px", borderTopLeftRadius: "0px", borderBottomLeftRadius: "0px" }} type="submit">Send</button>
+                        </form>
                     </div>
                 </div>
-        </div>
+            </div>
+        </div>  
+        </>
     )
+    
 }
+
 export default Chat;

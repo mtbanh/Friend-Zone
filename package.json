@@ -28,15 +28,23 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-flash": "0.0.2",
     "express-session": "^1.17.1",
+    "filestack-js": "^3.16.0",
+    "filestack-react": "^3.2.1",
     "if-env": "^1.0.4",
+    "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.1.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "react": "^16.13.1",
+    "react-multi-carousel": "^2.5.5",
     "react-router-dom": "^5.2.0",
+    "react-scroll-into-view": "^1.8.2",
+    "react-scroll-to-bottom": "^3.0.0",
     "sequelize": "^6.3.4"
   },
   "bugs": {
