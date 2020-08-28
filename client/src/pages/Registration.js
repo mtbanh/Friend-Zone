@@ -20,8 +20,6 @@ const Register = () => {
                 .then(() => {
                     console.log(`user created`)
                     window.location.replace("/login")
-
-                    // this.setState({redirectTo:"/login"})
                 })
                 .catch(err => console.log(err))
         }

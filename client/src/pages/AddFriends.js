@@ -10,7 +10,9 @@ import API from "../utils/API"
 
 
 const Addfriends = () => {
-  let userData = window.localStorage.getItem('user')
+  let userData = JSON.parse(window.localStorage.getItem('user'))
+  // let userId = JSON.parse(userData.id)
+  // console.log(userId)
   // let userID = userData.id;
   // const {id} = (userData.id) 
   console.log(userData, userData.id)
