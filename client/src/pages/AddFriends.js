@@ -50,16 +50,22 @@ const Addfriends = () => {
   }
 
   const addBuddy = (id) => {
-    console.log("friend id " + id)
-    // let friends = {
-    //   // user: userID,
-    //   friend: id
-    // }
-    API.updateProfile(id) 
-      .then(function (response) {
-        console.log(response)
-      })
-      .catch(err => console.log(err))
+    API.getProfile(JSON.parse(userData).id)
+      .then(res => {
+        console.log(res.data.friends_list)
+        var array = res.data.friends_list
+        var newArray = []
+        for(var i=0; i<array.length; i++){
+          newArray.push(array[i])
+        }
+        newArray.push(id)
+        console.log(newArray)
+        API.updateProfile((newArray), JSON.parse(userData).id)
+          .then(function (response) {
+            console.log(response)
+          })
+          .catch(err => console.log(err))
+    })
   }
 
   return (

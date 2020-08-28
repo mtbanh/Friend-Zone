@@ -8,9 +8,7 @@ import LogoutBtn from "../Components/LogoutBtn"
 
 
 const Chat = () => {
-    let userData = window.localStorage.getItem('user')
-    var userID = userData.id;
-    console.log(`Here is the user: ${userData}`)
+    let userID = JSON.parse(window.localStorage.getItem('user')).id
     const [chats, setChats] = useState([])
     var [friendName, setFriendName] = useState(0);
     const [userName, setUserName] = useState(userID);
@@ -47,7 +45,8 @@ const Chat = () => {
     };
 
     function handleClick() {
-        API.postChat({ user1: userName, user2: 5 })
+        console.log("yes")
+        API.postChat({ user1: 1, user2: 5 })
             .then(res => {
                 var newChat = chats
                 newChat.push(res.data)
