@@ -23,7 +23,7 @@ const Cards = props =>{
             </li>
           </ul>
         </div>
-        <button onClick={() => props.addBuddy} className="btn btn-info add">
+        <button onClick={() => props.addBuddy(props.id)} className="btn btn-info add">
           Add to Friend Zone!
         </button>
       </div>

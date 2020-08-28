@@ -46,6 +46,7 @@ class Profile extends Component {
     event.preventDefault();
     if (this.state.firstName && this.state.lastName && this.state.age && this.state.bio && this.state.hobby) {
       console.log(this.state)
+      console.log(API.createProfile)
       API.createProfile(this.state)
         .then(() => {
           console.log(`User profile created`)
