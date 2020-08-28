@@ -8,12 +8,13 @@ const profileController = require("../../controllers/profileController");
 router
   .route("/")
   .get(profileController.findAll)
-  .post(profileController.createProfile);
+  .post(profileController.createProfile)
+  .put(profileController.profileUpdate)
 
 router
   .route("/:id")
   .get(profileController.getById)
-  .put(profileController.profileUpdate)
+  
 
 module.exports = router;
 

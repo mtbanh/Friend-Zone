@@ -57,7 +57,7 @@ const Login = (props) => {
                             <div class="row no-gutter">
                                 <div class="col-md-9 col-lg-8 mx-auto">
                                     <h3 class="login-heading mb-4">Welcome back!</h3>
-                                    <h4>Error</h4>
+                                    {/* <h4>Error</h4> */}
                                     <form>
                                         <div class="form-label-group">
                                             <input
