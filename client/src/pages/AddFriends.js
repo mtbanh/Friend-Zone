@@ -11,7 +11,9 @@ import API from "../utils/API"
 
 const Addfriends = () => {
   let userData = window.localStorage.getItem('user')
-  var userID = userData.id;
+  // let userID = userData.id;
+  // const {id} = (userData.id) 
+  console.log(userData, userData.id)
   const [profile, setProfile] = useState([])
   const state = {
 
@@ -34,6 +36,7 @@ const Addfriends = () => {
       }
     }
   }
+
   useEffect(() => {
     getProfiles()
   }, []);
@@ -48,8 +51,11 @@ const Addfriends = () => {
 
   const addBuddy = (id) => {
     console.log("friend id " + id)
-    var userId = 1
-    API.updateProfile(userId, { friendId: id })
+    // let friends = {
+    //   // user: userID,
+    //   friend: id
+    // }
+    API.updateProfile(id) 
       .then(function (response) {
         console.log(response)
       })
@@ -78,6 +84,7 @@ const Addfriends = () => {
       >
         {
           profile.map((friend, i) => (
+
             <Cards
               name={friend.firstName + " " +friend.lastName}
               hobby={friend.hobby}
@@ -86,11 +93,12 @@ const Addfriends = () => {
               addBuddy={() =>addBuddy(friend.id)}
               key={i}
             />
+
           ))
         }
-      </Carousel>)
+      </Carousel>
     </>
-  )  
+  )
 }
 
 export default Addfriends;
@@ -133,4 +141,4 @@ export default Addfriends;
   //         dotListClass="custom-dot-list-style"
   //         itemClass="carousel-item-padding-40-px"
   //       >
-          // {friends.map((friend, i) => (
+          // {friends.map((friend, i) => 

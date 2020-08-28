@@ -1,7 +1,7 @@
 
 module.exports = function (req, res, next) {
   console.log(`isauthenticated ${req.user}`)
-
+  return req.user === null ? next(false) : next()
   // if (req) {
   //   // console.log(req.user)
   //   // console.log(req.session.passport.user)
