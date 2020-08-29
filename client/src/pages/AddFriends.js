@@ -5,6 +5,7 @@ import Cards from "../Components/Cards";
 import LogoutBtn from "../Components/LogoutBtn"
 // import axios from "axios"
 import API from "../utils/API"
+import "./AddFriend.css";
 
 
 
