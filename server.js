@@ -18,6 +18,7 @@ if (process.env.NODE_ENV === "production") {
 //     app.use(express.static("client/build"));
 //   }
 const profileSeed = [{
+
   firstName: "Marc ",
   lastName: "Berman",
   age: 37,
@@ -26,6 +27,7 @@ const profileSeed = [{
   files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
   friends_list: []
     
+
   },
 {
   firstName: "Mai ",
@@ -36,6 +38,7 @@ const profileSeed = [{
   files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
   friends_list: []
   },
+
 {
   firstName: "Jane ",
   lastName: "Doe",
@@ -63,6 +66,7 @@ const profileSeed = [{
   files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
   friends_list: []
     }
+
 ]
 
 app.use(session({ secret: "keyboard cat", resave: false, saveUninitialized: false }));
