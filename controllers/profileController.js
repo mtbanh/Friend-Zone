@@ -1,6 +1,7 @@
 
 const db = require("../models");
 const profile = require("../models/profile");
+const { Sequelize } = require("../models");
 
 
 // module.exports = {
@@ -39,28 +40,33 @@ module.exports = {
       },
       profileUpdate: function(req, res) {
         console.log(req.body)
+        const friendID = req.body.id 
+        console.log(`friendID:`, friendID)
         // const friendId = req.body.friend
         console.log(req.user)
-        console.log(`the friend id is: ${req.body}`)
-          db.Profile
-          .update({friends_list: friendId}, {where: {id: req.user.id}})
+        // console.log(`the friend id is:`, req.body)
+          db.Profile.update(
+            {friends_list: Sequelize.fn('array_append', Sequelize.col('friends_list'), friendID)},
+            {where: {id : req.user}}
+          )
+          .then(result =>{
+            res.json(result)
+          })
           
-          // .find({
+          // .findAll({
           //   where: {id: req.user}
           // })
-          // .then((profile) =>{
-          //   profile.friends_list.push(friendId)
+          // .then((profile)=>{
+          //   profile.friends_list.push(friendID)
           //   profile.update({
           //     friends_list: profile.friends_list
-          //   }, {where: {id: req.user}})
+          //   },{
+          //     where:{
+          //       id: req.user
+          //     }
+          //   })
+          //   .then(profile =>res.json(profile))
           // })
-          // }
-          //send the userID and update the col friends_list with the friendID
-          // .findOneAndUpdate({id:req.user}, req.body)
-          .then(dbModel=> {
-            res.json(dbModel)
-            console.log(dbModel)
-          })
           .catch(err => res.status(422).json(err))
       }
     //   getById: function(req, res) {
