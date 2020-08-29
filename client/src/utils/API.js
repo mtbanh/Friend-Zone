@@ -45,7 +45,7 @@ export default {
   },
   updateProfile: (id) => {
     console.log(`the friendId is ${id}`)
-    return axios.put("api/profile/" , id);
+    return axios.put("api/profile/" , {id});
   },  
   getUserData: ()=>{
     return axios.get("")

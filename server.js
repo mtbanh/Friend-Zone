@@ -24,7 +24,7 @@ const profileSeed = [{
   bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
   hobby: "Scale Miniature Building",
   files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  friends_list: ""
+  friends_list: []
     
   },
 {
@@ -34,7 +34,7 @@ const profileSeed = [{
   bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
   hobby: "Scale Miniature Building",
   files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  friends_list: ""
+  friends_list: []
   },
 {
   firstName: "Jane ",
@@ -43,7 +43,7 @@ const profileSeed = [{
   bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
   hobby: "Scale Miniature Building",
   files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  friends_list: ""
+  friends_list: []
   },
 {
   firstName: "Abbott ",
@@ -52,7 +52,7 @@ const profileSeed = [{
   bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
   hobby: "Scale Miniature Building",
   files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  friends_list: "" 
+  friends_list: []
   },
 {
   firstName: "Ben ",
@@ -61,7 +61,7 @@ const profileSeed = [{
   bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
   hobby: "Scale Miniature Building",
   files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  friends_list: ""
+  friends_list: []
     }
 ]
 
@@ -76,7 +76,7 @@ app.use(flash())
 
 app.use(routes);
 
-db.sequelize.sync({ force: true }).then(function () {
+db.sequelize.sync({ force: false }).then(function () {
   db.Profile.bulkCreate(profileSeed);
   app.listen(PORT, function () {
     console.log("Server listening on localhost:" + PORT)
