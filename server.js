@@ -80,7 +80,7 @@ app.use(flash())
 app.use(routes);
 
 db.sequelize.sync({ force: true }).then(function () {
-  db.Profile.bulkCreate(profileSeed);
+  // db.Profile.bulkCreate(profileSeed);
   app.listen(PORT, function () {
     console.log("Server listening on localhost:" + PORT)
   });
