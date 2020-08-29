@@ -11,10 +11,10 @@ import "./AddFriend.css";
 
 
 const Addfriends = () => {
-  let userData = window.localStorage.getItem('user')
-  // let userID = userData.id;
+  let userData = JSON.parse(window.localStorage.getItem('user'))
+  let userID = userData.id;
   // const {id} = (userData.id) 
-  console.log(userData, userData.id)
+  console.log(userData, userID)
   const [profile, setProfile] = useState([])
   const state = {
 
