@@ -11,7 +11,7 @@ const Cards = props =>{
     return(
         <div className="card" >
         <div className="img-container" style={{display: 'flex', justifyContent: 'center'}}>
-          <img alt={props.name} src={props.image} height={200} width={200}/>
+          <img alt={props.name} src={props.image} height={250} width={250}/>
         </div>
         <div className="content">
           <ul>
@@ -19,7 +19,13 @@ const Cards = props =>{
               <strong>Name:</strong> {props.name}
             </li>
             <li>
+              <strong>Age:</strong> {props.age}
+            </li>
+            <li>
               <strong>Hobby:</strong> {props.hobby}
+            </li>
+            <li>
+              <strong>Bio:</strong> {props.bio}
             </li>
           </ul>
         </div>
