@@ -1,0 +1,6 @@
+.friendImage {
+    background-image : url("../assets/img/Friends-on-Dock.jpg");
+    background-size:cover;
+    background-position : center;
+    height :  800px;
+}
