@@ -85,14 +85,12 @@ class Profile extends Component {
               </span>
             </div>
             <div>
-              <h6 className="upload"> Upload a Picture </h6>
-        
-                
-                <div className='m-3'>
-                  <img className="profilePicture" alt="profile picture" src={this.state.files} />
+              <h6 className="upload"></h6>
+                <div className="m-5">              
                 </div>
               </div>
-    
+                <img className="fas fa-portrait fa-9x" alt className= "profilePicture" src={this.state.files} /> 
+
           </div>
          
           {/* alert pop up when its been created */}
@@ -178,7 +176,6 @@ class Profile extends Component {
                   <button class="btn btn-primary" type="submit" onClick={this.handleFormSubmit}>Create Profile</button>
                   {/* creat handle submit api.create profile */}
                   <span></span>
-                  <input type="reset" className="btn btn-default" value="Cancel"></input>
                 </div>
               </div>
             </form>
