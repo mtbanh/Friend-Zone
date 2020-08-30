@@ -64,7 +64,6 @@ const Addfriends = () => {
         console.log(newArray)
         API.updateProfile((newArray), userID)
           .then(function (response) {
-            console.log(response)
             window.location.replace("/friends")
           })
           .catch(err => console.log(err))
@@ -101,7 +100,7 @@ const Addfriends = () => {
               bio={friend.bio}
               image={friend.files}
               id={friend.id}
-              addBuddy={() =>addBuddy(friend.id)}
+              addBuddy={() =>addBuddy(friend)}
               key={i}
             />
 
