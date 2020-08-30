@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
+import "./Friends.css";
+
 
 const Friends = () => {
     let userID = JSON.parse(window.localStorage.getItem('user')).id
@@ -36,20 +38,22 @@ const Friends = () => {
     }
 
     return (
-        <div className="container row">
+        <div className="friendImage container">
+            <div className = "row">
             {friends.map(friend => {
                 return (
-                    <div key={friend.id} className="card col-md-6">
+                    <div key={friend.id} className="text-center card col-md-5 m-3 bg-secondary" style = {{opacity : ".85"}}>
                         <div className="card-img-top">
                             <img src={friend.files} style={{ width: "200px" }} alt={friend.firstName}></img>
                         </div>
-                        <div className="card-body">
+                        <div className="card-body text-white">
                             <h4>{friend.firstName} {friend.lastName}</h4>
-                            <button data-id={friend.firstName} onClick={createChat}>Start a chat</button>
+                            <button data-id={friend.firstName} onClick={createChat} className  = "btn-dark" style = {{border: "none", textDecoration: "none", width : "50%"}}>Start a chat</button>
                         </div>
                     </div>
                 )
             })}
+            </div>
         </div>
     )
 }
