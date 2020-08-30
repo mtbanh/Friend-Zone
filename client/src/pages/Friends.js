@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
+import Cards from "../Components/Cards";
 
 
 
@@ -14,15 +15,13 @@ const Friends = () => {
     function loadFriends() {
         API.getProfile(userID)
             .then(res => {
-                var array = []
+                var array = [...friends]
                 for (var i = 0; i < res.data.friends_list.length; i++) {
-                    API.getProfile(res.data.friends_list[i])
-                        .then(friend => {
-                            array.push(friend.data)
-                        })
+                    array.push(res.data.friends_list[i])
+                    setFriends(array)
                 }
-                setFriends(array)
             })
+            .catch(err => {console.log(err)})
     }
 
     function createChat(event) {
@@ -40,9 +39,10 @@ const Friends = () => {
     return (
         <div className="container">
             {console.log(friends)}
-            {friends.map(friend => {
+            {/* {friends.map(friend => {
                 return (
                     <div key={friend.id} className="card col-md-6">
+                        {console.log(friend)}
                         <div className="card-img-top">
                             <img src={friend.files} style={{ width: "300px" }} alt={friend.firstName}></img>
                         </div>
@@ -54,7 +54,24 @@ const Friends = () => {
                     </div>
                 )
 
-            })}
+            })} */}
+            {
+          friends.map((friend, i) => (
+
+            <Cards
+              name={friend.firstName + " " +friend.lastName}
+              age={friend.age}
+              hobby={friend.hobby}
+              bio={friend.bio}
+              image={friend.files}
+              id={friend.id}
+            //   addBuddy={() =>addBuddy(friend)}
+            
+              key={i}
+            />
+
+          ))
+        }
         </div>
     )
 }
