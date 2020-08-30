@@ -12,7 +12,13 @@ import "./AddFriend.css";
 
 const Addfriends = () => {
   let userData = JSON.parse(window.localStorage.getItem('user'))
+
+  // let userId = JSON.parse(userData.id)
+  // console.log(userId)
+  // let userID = userData.id;
+
   let userID = userData.id;
+
   // const {id} = (userData.id) 
   console.log(userData, userID)
   const [profile, setProfile] = useState([])
@@ -72,6 +78,7 @@ const Addfriends = () => {
 
   return (
     <> <LogoutBtn />
+      <div className= "background">
       <Carousel
         swipeable={false}
         draggable={false}
@@ -107,6 +114,7 @@ const Addfriends = () => {
           ))
         }
       </Carousel>
+      </div>
     </>
   )
 }

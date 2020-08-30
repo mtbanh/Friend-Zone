@@ -9,7 +9,7 @@ class Nav extends React.Component {
     render() {
         return (
             <nav class="navbar navbar-dark bg-dark">
-                <Link class="navbar-brand" id="brand">
+                <Link class="navbar-brand" id="brand " to="/">
                     {/* <img src="" width="30" height="30" class="d-inline-block align-top" href="/landing" loading="lazy" /> */}
                 FriendZone
 
@@ -22,8 +22,11 @@ class Nav extends React.Component {
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <Link class="nav-link active" to="#">Home <span class="sr-only">(current)</span></Link>
-                        <Link class="nav-link" to="/addFriends">Add a Friend</Link>
-                        <Link class="nav-link" to="#">About us</Link>
+
+                        {/* <Link class="nav-link" to="/addFriends">Add a Friend</Link> */}
+                        <Link class="nav-link" to="/Aboutus">About us</Link>
+
+
                         <Link class="nav-link" to="#">About the project</Link>
                         <Link class="nav-link disabled" to="#" tabindex="-1" aria-disabled="true"></Link>
                     </div>
