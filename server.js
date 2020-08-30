@@ -26,16 +26,7 @@ const profileSeed = [{
   bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips.",
   hobby: "Running",
   files: "https://www.assembly.ca.gov/sites/assembly.ca.gov/files/memberphotos/AD49-Chau.jpg",
-  friends_list: ""
-
-  age: 37,
-  bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
-  hobby: "Scale Miniature Building",
-  files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
   friends_list: []
-    
-
-
 },
 {
   firstName: "Mai ",
@@ -44,8 +35,7 @@ const profileSeed = [{
   bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips.",
   hobby: "Running",
   files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-
-  friends_list: ""
+  friends_list: []
 },
 {
   firstName: "Jane ",
@@ -54,7 +44,7 @@ const profileSeed = [{
   bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips.",
   hobby: "Running",
   files: "https://www.assembly.ca.gov/sites/assembly.ca.gov/files/memberphotos/ad43_friedman.jpg",
-  friends_list: ""
+  friends_list: []
 },
 {
   firstName: "Abbott ",
@@ -63,7 +53,7 @@ const profileSeed = [{
   bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips.",
   hobby: "Running",
   files: "https://www.assembly.ca.gov/sites/assembly.ca.gov/files/memberphotos/AD05-Frank_Bigelow.jpg",
-  friends_list: ""
+  friends_list: []
 },
 {
   firstName: "Laura ",
@@ -72,7 +62,7 @@ const profileSeed = [{
   bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips.",
   hobby: "Running",
   files: "https://www.assembly.ca.gov/sites/assembly.ca.gov/files/memberphotos/ad60_cervantes_roster150_20161205.jpg",
-  friends_list: ""
+  friends_list: []
 },
 {
   firstName: "Ian  ",
@@ -81,7 +71,7 @@ const profileSeed = [{
   bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips.",
   hobby: "Running",
   files: "https://www.assembly.ca.gov/sites/assembly.ca.gov/files/memberphotos/AD57.jpg",
-  friends_list: ""
+  friends_list: []
 },
 {
 firstName: "John  ",
@@ -90,7 +80,7 @@ age: 25,
 bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips.",
 hobby: "Running",
 files: "https://i1.wp.com/www.runsociety.com/wp-content/uploads/2015/01/Runners-High-Explained-How-High-Can-You-Get-thumb.jpg?fit=1280%2C720&ssl=1",
-friends_list: "" 
+friends_list: []
 },
 {
   firstName: "Ben ",
@@ -99,12 +89,8 @@ friends_list: ""
   bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips.",
   hobby: "Running",
   files: "https://www.assembly.ca.gov/sites/assembly.ca.gov/files/memberphotos/jgabriel.jpg",
-  friends_list: ""
-}
-
   friends_list: []
-  },
-
+},
 {
   firstName: "Jane ",
   lastName: "Doe",
@@ -113,16 +99,16 @@ friends_list: ""
   hobby: "Scale Miniature Building",
   files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
   friends_list: []
-  },
+},
 {
-  firstName: "Abbott ",
+  firstName: "William ",
   lastName: "Doe",
-  age: 37,
+  age: 50,
   bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
   hobby: "Scale Miniature Building",
-  files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  files: "https://unlvrebels.com/images/2019/8/26/_5_Billy_Jones_2019_hs.jpg",
   friends_list: []
-  },
+},
 {
   firstName: "Ben ",
   lastName: "Berman",
@@ -131,9 +117,7 @@ friends_list: ""
   hobby: "Scale Miniature Building",
   files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
   friends_list: []
-    }
-
-
+}
 ]
 
 app.use(session({ secret: "keyboard cat", resave: false, saveUninitialized: false }));
@@ -147,7 +131,7 @@ app.use(flash())
 
 app.use(routes);
 
-db.sequelize.sync({ force: true }).then(function () {
+db.sequelize.sync({ force: false }).then(function () {
   // db.Profile.bulkCreate(profileSeed);
   app.listen(PORT, function () {
     console.log("Server listening on localhost:" + PORT)

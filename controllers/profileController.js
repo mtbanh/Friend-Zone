@@ -24,7 +24,10 @@ module.exports = {
     findAll: function(req, res) {
       console.log(req.query)
         db.Profile.findAll(req.query)
-          .then(dbModel => res.json(dbModel))
+          .then(dbModel => {
+            console.log("Find all",dbModel)
+            res.json(dbModel)
+          })
           .catch(err => res.status(422).json(err));
       },
       createProfile: function(req, res) {

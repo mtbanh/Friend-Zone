@@ -1,3 +1,5 @@
-.btn {
-    background: #1606f7
+#add {
+    background: #1606f7;
+    position: absolute;
+    bottom: -10;
 }
