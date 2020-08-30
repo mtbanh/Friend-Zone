@@ -51,16 +51,23 @@ const Addfriends = () => {
   }
 
   const addBuddy = (id) => {
-    console.log("friend id " + id)
-    // let friends = {
-    //   // user: userID,
-    //   friend: id
-    // }
-    API.updateProfile(id) 
-      .then(function (response) {
-        console.log(response)
-      })
-      .catch(err => console.log(err))
+    
+    API.getProfile(userID)
+      .then(res => {
+        console.log(res.data.friends_list)
+        var array = res.data.friends_list
+        var newArray = []
+        for(var i=0; i<array.length; i++){
+          newArray.push(array[i])
+        }
+        newArray.push(id)
+        console.log(newArray)
+        API.updateProfile((newArray), userID)
+          .then(function (response) {
+            window.location.replace("/friends")
+          })
+          .catch(err => console.log(err))
+    })
   }
 
   return (
@@ -93,7 +100,7 @@ const Addfriends = () => {
               bio={friend.bio}
               image={friend.files}
               id={friend.id}
-              addBuddy={() =>addBuddy(friend.id)}
+              addBuddy={() =>addBuddy(friend)}
               key={i}
             />
 

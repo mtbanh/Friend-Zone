@@ -27,8 +27,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.JSON(5000)        
         },
         friends_list:{
-            type: DataTypes.ARRAY(DataTypes.INTEGER),
-            defaultValue: []
+            type: DataTypes.JSON(5000)
         }
         // friends_list:{
         //     type: DataTypes.STRING(4)
