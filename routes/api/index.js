@@ -10,7 +10,6 @@ const passport = require("../../config/passport")
 router.use("/register", registerRoutes)
 router.use("/login", loginRoutes)
 
-
 router.use("/chat", isAuthenticated, chatRoutes);
 router.use("/chat-transaction", isAuthenticated, transactionRoutes);
 router.use("/profile", isAuthenticated, profileRoutes);

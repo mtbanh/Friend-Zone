@@ -63,6 +63,9 @@ function App() {
                 <Route exact path="/addFriends">
                   <AddFriends />
                 </Route>
+                <Route exact path="/friends">
+                  <Friends />
+                </Route>
                 </>
               }
             </>

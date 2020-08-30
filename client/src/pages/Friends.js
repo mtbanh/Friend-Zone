@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
 
-
-
 const Friends = () => {
-    let userData = window.localStorage.getItem('user')
-    var userID = userData.id;
+    let userID = JSON.parse(window.localStorage.getItem('user')).id
+    let userName = JSON.parse(window.localStorage.getItem('user')).name
     const [friends, setFriends] = useState([]);
 
     useEffect(() => {
@@ -15,37 +13,40 @@ const Friends = () => {
     function loadFriends() {
         API.getProfile(userID)
             .then(res => {
-                setFriends(res.data.friends);
+                var array = [...friends]
+                for (var i = 0; i < res.data.friends_list.length; i++) {
+                    array.push(res.data.friends_list[i])
+                }
+                setFriends(array)
             })
-    }
-
-    function loadProfile(friend) {
-        API.getProfile(friend)
-            .then(res => {
-                return res.data;
-            })
+            .catch(err => {console.log(err)})
     }
 
     function createChat(event) {
-        var friendId = event.target.attribute("data-id")
+        console.log(event.target)
+        var friendId = event.target.getAttribute("data-id")
         var obj = {
-            user1: userID,
+            user1: userName,
             user2: friendId
         }
         API.postChat(obj)
             .then(res =>
-                console.log(res.data)
+                window.location.replace("/chat")
             )
     }
 
     return (
-        <div>
+        <div className="container row">
             {friends.map(friend => {
-                var info = loadProfile(friend);
                 return (
-                    <div>
-                        <h1>{info.name}</h1>
-                        <button data-id={info.UserId} onClick={createChat()}>Start a chat</button>
+                    <div key={friend.id} className="card col-md-6">
+                        <div className="card-img-top">
+                            <img src={friend.files} style={{ width: "200px" }} alt={friend.firstName}></img>
+                        </div>
+                        <div className="card-body">
+                            <h4>{friend.firstName} {friend.lastName}</h4>
+                            <button data-id={friend.firstName} onClick={createChat}>Start a chat</button>
+                        </div>
                     </div>
                 )
             })}

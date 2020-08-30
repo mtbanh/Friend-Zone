@@ -22,8 +22,13 @@ class Nav extends React.Component {
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <Link class="nav-link active" to="#">Home <span class="sr-only">(current)</span></Link>
+
                         {/* <Link class="nav-link" to="/addFriends">Add a Friend</Link> */}
                         <Link class="nav-link" to="/Aboutus">About us</Link>
+
+                        <Link class="nav-link" to="/addFriends">Add a Friend</Link>
+                        <Link class="nav-link" to="/AboutUs">About us</Link>
+
                         <Link class="nav-link" to="#">About the project</Link>
                         <Link class="nav-link disabled" to="#" tabindex="-1" aria-disabled="true"></Link>
                     </div>

@@ -27,7 +27,7 @@ class Profile extends Component {
 
 
   onFiles = ({ filesUploaded }) => {
-
+    
     this.setState({ files: filesUploaded[0].url });
     console.log(this.state.files)
   };
@@ -76,6 +76,7 @@ class Profile extends Component {
                     mode={"pick"}
                     onSuccess={this.onFiles}
                     name="files"
+                    size="68772"
                     value={this.state.files}
                     onChange={this.handleInputChange}
                     preload={true}
@@ -94,7 +95,7 @@ class Profile extends Component {
               </div>
     
           </div>
-          </div>
+         
           {/* alert pop up when its been created */}
           <div className="col-md-9 profile-info">
             <div className="alert alert-info alert-dismissable">
@@ -183,7 +184,7 @@ class Profile extends Component {
               </div>
             </form>
           </div>
-        
+          </div>
       </>
     );
   }
