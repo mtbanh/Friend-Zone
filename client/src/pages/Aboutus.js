@@ -1,10 +1,10 @@
 import React from "react";
-import "./Aboutus.css";
-// import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-// import SignupBtn from "../Components/SignupBtn"
-// import LoginBtn from "../Components/LoginBtn";
+// import "./LandingStyle.css";
+import SignupBtn from "../Components/SignupBtn"
+import LoginBtn from "../Components/LoginBtn";
 
 const AboutUs = () => {
+<<<<<<< HEAD
   return (
     <section id="team" class="pb-5">
       <div class="container">
@@ -142,6 +142,31 @@ const AboutUs = () => {
                       <h4 class="card-title">Aidan</h4>
                       <p class="card-text">UC Berkeley Full-Stack Coding Boot Camp student.</p>
                       {/* <a class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> */}
+=======
+    return (
+        <div className="bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m6 l3"><p>Aidan</p>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <img src="" />
+                                        <span class="card-title">Aidan Sweeny</span>
+                                    </div>
+                                    <div class="card-content">
+                                        <p>Full stack student UC Berkeley</p>
+                                    </div>
+                                    <div class="card-action">
+                                        <a href="">GitHub</a>
+                                        <a href="">Linkedin</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+>>>>>>> d435310f0125593e057f57f9c5eb5277f76c3177
                     </div>
                   </div>
                 </div>
@@ -176,4 +201,4 @@ const AboutUs = () => {
   );
 }
 
-export default AboutUs;
+export default Landing;
