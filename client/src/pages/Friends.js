@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import API from "../utils/API";
-import Cards from "../Components/Cards";
-
-
 
 const Friends = () => {
     let userID = JSON.parse(window.localStorage.getItem('user')).id
+    let userName = JSON.parse(window.localStorage.getItem('user')).name
     const [friends, setFriends] = useState([]);
 
     useEffect(() => {
@@ -25,53 +23,33 @@ const Friends = () => {
     }
 
     function createChat(event) {
-        var friendId = event.target.attribute("data-id")
+        console.log(event.target)
+        var friendId = event.target.getAttribute("data-id")
         var obj = {
-            user1: userID,
+            user1: userName,
             user2: friendId
         }
         API.postChat(obj)
             .then(res =>
-                console.log(res.data)
+                window.location.replace("/chat")
             )
     }
 
     return (
-        <div className="container">
-            {console.log(friends)}
-            {/* {friends.map(friend => {
+        <div className="container row">
+            {friends.map(friend => {
                 return (
                     <div key={friend.id} className="card col-md-6">
-                        {console.log(friend)}
                         <div className="card-img-top">
-                            <img src={friend.files} style={{ width: "300px" }} alt={friend.firstName}></img>
+                            <img src={friend.files} style={{ width: "200px" }} alt={friend.firstName}></img>
                         </div>
                         <div className="card-body">
                             <h4>{friend.firstName} {friend.lastName}</h4>
-                            <p>{friend.bio}</p>
-                            <button data-id={friend.id} onClick={createChat}>Start a chat</button>
+                            <button data-id={friend.firstName} onClick={createChat}>Start a chat</button>
                         </div>
                     </div>
                 )
-
-            })} */}
-            {
-          friends.map((friend, i) => (
-
-            <Cards
-              name={friend.firstName + " " +friend.lastName}
-              age={friend.age}
-              hobby={friend.hobby}
-              bio={friend.bio}
-              image={friend.files}
-              id={friend.id}
-            //   addBuddy={() =>addBuddy(friend)}
-            
-              key={i}
-            />
-
-          ))
-        }
+            })}
         </div>
     )
 }

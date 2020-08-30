@@ -1,20 +1,20 @@
-import React, { useState, useEffect, createRef, useContext } from "react";
+import React, { useState, useEffect, createRef } from "react";
 // import ScrollToBottom from 'react-scroll-to-bottom';
 import "./Chat.css";
 import API from "../utils/API";
-import UserContext from "../utils/UserContext/userContext"
 import LogoutBtn from "../Components/LogoutBtn"
 
 
 
 const Chat = () => {
     let userID = JSON.parse(window.localStorage.getItem('user')).id
+    let user = JSON.parse(window.localStorage.getItem('user')).name
     const [chats, setChats] = useState([])
     var [friendName, setFriendName] = useState(0);
-    const [userName, setUserName] = useState(userID);
-    var [transactions, setTransactions] = useState([])
-    const [chatId, setChatId] = useState(0)
-    const [showChat, setShowChat] = useState(false)
+    const [userName, setUserName] = useState(user);
+    var [transactions, setTransactions] = useState([]);
+    const [chatId, setChatId] = useState(0);
+    const [showChat, setShowChat] = useState(false);
     const scroller = createRef();
 
     useEffect(() => {
@@ -24,8 +24,10 @@ const Chat = () => {
     function loadTransactions(id) {
         API.getChatsTransactionId(id)
             .then(res => {
+                console.log(res.data)
                 setTransactions(res.data)
             })
+            .catch(err => console.log(err))
     }
 
     const loadChats = () => {
@@ -33,38 +35,25 @@ const Chat = () => {
             .then(res => {
                 var array = [];
                 for(var i=0; i<res.data.length; i++){
-                    if(JSON.parse(res.data[i].user1) === userName){
+                    if(res.data[i].user1 === userName){
                         array.push(res.data[i])
                     }
-                    if(JSON.parse(res.data[i].user2) === userName){
+                    if(res.data[i].user2 === userName){
                         array.push(res.data[i])
                     }
+                    
                 }
                 setChats(array)
             })
     };
 
-    function handleClick() {
-        console.log("yes")
-        API.postChat({ user1: 1, user2: 5 })
-            .then(res => {
-                var newChat = chats
-                newChat.push(res.data)
-                setChats(newChat)
-                loadTransactions(res.data.id)
-                window.location.reload(false);
-            })
-    }
-
     function displayChat(event) {
         event.preventDefault();
         var temp = event.target.getAttribute("data-id");
+        console.log(temp)
         loadTransactions(temp)
         setChatId(temp);
-        API.getProfile(event.target.getAttribute("data-name"))
-            .then(res => {
-                setFriendName(res.data.name)
-            })
+        setFriendName(event.target.getAttribute("data-name"))
         setShowChat(true)
         updateScroll();
     }
@@ -75,25 +64,27 @@ const Chat = () => {
         event.target.children[0].value = "";
         API.postChatTransaction(chat)
             .then(res => {
+
                 var newTran = [...transactions]
                 newTran.push(res.data)
                 setTransactions(newTran)
             })
+            .catch(err => console.log(err))
     }
 
     function updateScroll() {
         var element = scroller.current
         element.scrollIntoView({ behavior: 'smooth' })
     }
+
     return (
         <>
         <LogoutBtn />
-      
         <div className="container backgroundImage" >
-            <button onClick={handleClick}>New Chat</button> 
+            {/* <button onClick={handleClick}>New Chat</button>  */}
             <div className="row">
                     <ul className="list-group col-md-4 mt-4">
-                        {chats.map(chat => {
+                        {chats.map((chat, i) => {
                             return (
                                     <li key={chat.id} onClick={displayChat} data-id={chat.id} data-name={chat.user2} style = {{cursor : "pointer"}}className="list-group-item bg-secondary text-white border-white">Chat with user: {chat.user2}</li>
                             )
@@ -106,7 +97,7 @@ const Chat = () => {
                         {transactions.map(tran => {
                             return (
                                     <div key={tran.id} className="card">
-                                        <div className={JSON.parse(tran.userID) === userName ? "bg-info card-body" : "bg-secondary card-body"}>{tran.timeStamp}<div style={{ witdth: "100%", height: "1px", backgroundColor: "white" }}></div>{tran.text}</div>
+                                        <div className={tran.userID === userName ? "bg-info card-body" : "bg-secondary card-body"}>{tran.timeStamp}<div style={{ witdth: "100%", height: "1px", backgroundColor: "white" }}></div>{tran.text}</div>
                                     </div>
                             )
                         })}
