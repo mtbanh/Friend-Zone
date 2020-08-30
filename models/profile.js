@@ -26,10 +26,12 @@ module.exports = function(sequelize, DataTypes) {
         files:{
             type: DataTypes.JSON(5000)        
         },
-        
         friends_list:{
-            type: DataTypes.STRING(4)
-        },
+            type: DataTypes.JSON(5000)
+        }
+        // friends_list:{
+        //     type: DataTypes.STRING(4)
+        // },
         
         
         // gender: {
@@ -39,9 +41,7 @@ module.exports = function(sequelize, DataTypes) {
        
        
        
-        friends_list:{
-            type: DataTypes.JSON(1000)
-        }
+        
     });
     // Profile.associate = function (models){
     //     // Profile can't be created w/o an user due to foreign key constraint

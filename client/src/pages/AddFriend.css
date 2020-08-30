@@ -1,0 +1,15 @@
+.react-multi-carousel-track  {
+    padding-top: 10%;
+}
+
+/* .react-multiple-carousel__arrow {
+    position: relative;
+    top: 30%;
+} */
+
+.react-multi-carousel-dot {
+
+    position: absolute;
+    padding-top: 30%;
+    /* margin-top: 35%; */
+}
