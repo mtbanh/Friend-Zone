@@ -18,8 +18,8 @@ const Friends = () => {
                 var array = [...friends]
                 for (var i = 0; i < res.data.friends_list.length; i++) {
                     array.push(res.data.friends_list[i])
-                    setFriends(array)
                 }
+                setFriends(array)
             })
             .catch(err => {console.log(err)})
     }
