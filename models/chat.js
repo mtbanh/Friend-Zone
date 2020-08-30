@@ -3,10 +3,10 @@ module.exports = function (sequelize, DataTypes) {
         user1: DataTypes.STRING,
         user2: DataTypes.STRING
     })
-    Chat.associate = function (models) {
-        Chat.belongsTo(models.User, { foreignKey: {allowNull:false}})
-        Chat.hasMany(models.ChatTransaction, {foreignKey: {allowNull: false}})
-    }
+    // Chat.associate = function (models) {
+    //     Chat.belongsTo(models.User, { foreignKey: {allowNull:false}})
+    //     Chat.hasMany(models.ChatTransaction, {foreignKey: {allowNull: false}})
+    // }
 
     return Chat;
 }

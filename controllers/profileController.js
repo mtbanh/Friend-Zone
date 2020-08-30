@@ -37,7 +37,7 @@ module.exports = {
           .catch(err => res.status(422).json(err));
       },
       getById: function(req, res) {
-        db.Profile.findById(req.params.id)
+        db.Profile.findOne({where: {id : req.params.id}})
           .then(dbModel => res.json(dbModel))
           .catch(err => res.status(422).json(err));
       },
@@ -47,11 +47,9 @@ module.exports = {
         console.log(`friendID:`, friendID)
         // const friendId = req.body.friend
         console.log(req.user)
-        // console.log(`the friend id is:`, req.body)
-          db.Profile.update(
-            {friends_list: Sequelize.fn('array_append', Sequelize.col('friends_list'), friendID)},
-            {where: {id : req.user}}
-          )
+        console.log(`the friend id is: ${req.body}`)
+          db.Profile
+          .update({friends_list: req.body}, {where: {id: req.params.id}})
           .then(result =>{
             res.json(result)
           })
