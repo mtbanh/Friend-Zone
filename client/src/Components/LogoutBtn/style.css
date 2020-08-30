@@ -1,4 +1,6 @@
 #LogoutBtn{
+    width: 5rem;
+    height: 2rem;
     position:fixed;
     top: .5em;
     right: 5em
