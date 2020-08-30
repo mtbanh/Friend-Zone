@@ -42,14 +42,18 @@ const Friends = () => {
             {console.log(friends)}
             {friends.map(friend => {
                 return (
-                    <div key={friend.id} className="card col-md-6">
-                        <div className="card-img-top">
-                            <img src={friend.files} style={{ width: "300px" }} alt={friend.firstName}></img>
-                        </div>
-                        <div className="card-body">
-                            <h4>{friend.firstName} {friend.lastName}</h4>
-                            <p>{friend.bio}</p>
-                            <button data-id={friend.id} onClick={createChat}>Start a chat</button>
+                    <div className="card mb-3">
+                        <div className="row">
+                            <div key={friend.id} className="card col-md-6">
+                                <div className="card-img-top">
+                                    <img src={friend.files} style={{ width: "300px" }} alt={friend.firstName}></img>
+                                </div>
+                                <div className="card-body">
+                                    <h4>{friend.firstName} {friend.lastName}</h4>
+                                    <p>{friend.bio}</p>
+                                    <button data-id={friend.id} onClick={createChat}>Start a chat</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 )
