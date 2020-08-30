@@ -51,7 +51,8 @@ const Addfriends = () => {
   }
 
   const addBuddy = (id) => {
-    API.getProfile(JSON.parse(userData).id)
+    
+    API.getProfile(userID)
       .then(res => {
         console.log(res.data.friends_list)
         var array = res.data.friends_list
@@ -61,9 +62,10 @@ const Addfriends = () => {
         }
         newArray.push(id)
         console.log(newArray)
-        API.updateProfile((newArray), JSON.parse(userData).id)
+        API.updateProfile((newArray), userID)
           .then(function (response) {
             console.log(response)
+            window.location.replace("/friends")
           })
           .catch(err => console.log(err))
     })

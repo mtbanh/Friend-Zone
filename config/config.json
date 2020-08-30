@@ -1,21 +1,21 @@
 {
     "development": {
-      "username": "postgres",
-      "password": "supercoder",
+      "username": "root",
+      "password": "password",
       "database": "friendzone_db",
       "host": "localhost",
-      "dialect": "postgres"
+      "dialect": "mysql"
     },
     "test": {
-      "username": "postgres",
-      "password": "supercoder",
+      "username": "root",
+      "password": "password",
       "database": "friendzone_db",
       "host": "localhost",
-      "dialect": "postgresql"
+      "dialect": "mysql"
     },
     "production": {
       "use_env_variable": "JAWSDB_URL",
-      "dialect": "postgres"
+      "dialect": "mysql"
     }
   }
   

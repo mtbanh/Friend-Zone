@@ -4,8 +4,7 @@ import API from "../utils/API";
 
 
 const Friends = () => {
-    let userData = window.localStorage.getItem('user')
-    var userID = userData.id;
+    let userID = JSON.parse(window.localStorage.getItem('user')).id
     const [friends, setFriends] = useState([]);
 
     useEffect(() => {
@@ -15,14 +14,14 @@ const Friends = () => {
     function loadFriends() {
         API.getProfile(userID)
             .then(res => {
-                setFriends(res.data.friends);
-            })
-    }
-
-    function loadProfile(friend) {
-        API.getProfile(friend)
-            .then(res => {
-                return res.data;
+                var array = []
+                for (var i = 0; i < res.data.friends_list.length; i++) {
+                    API.getProfile(res.data.friends_list[i])
+                        .then(friend => {
+                            array.push(friend.data)
+                        })
+                }
+                setFriends(array)
             })
     }
 
@@ -39,15 +38,22 @@ const Friends = () => {
     }
 
     return (
-        <div>
+        <div className="container">
+            {console.log(friends)}
             {friends.map(friend => {
-                var info = loadProfile(friend);
                 return (
-                    <div>
-                        <h1>{info.name}</h1>
-                        <button data-id={info.UserId} onClick={createChat()}>Start a chat</button>
+                    <div key={friend.id} className="card col-md-6">
+                        <div className="card-img-top">
+                            <img src={friend.files} style={{ width: "300px" }} alt={friend.firstName}></img>
+                        </div>
+                        <div className="card-body">
+                            <h4>{friend.firstName} {friend.lastName}</h4>
+                            <p>{friend.bio}</p>
+                            <button data-id={friend.id} onClick={createChat}>Start a chat</button>
+                        </div>
                     </div>
                 )
+
             })}
         </div>
     )
