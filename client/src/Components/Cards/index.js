@@ -10,23 +10,23 @@ const Cards = props =>{
   
     return(
         <div className="card" >
-        <div className="img-container" style={{display: 'flex', justifyContent: 'center'}}>
+        <div className="img-container cardpic" style={{display: 'flex', justifyContent: 'center'}}>
           <img alt={props.name} src={props.image} height={250} width={250}/>
         </div>
         <div className="content">
           <ul>
-            <li>
+            <p>
               <strong>Name:</strong> {props.name}
-            </li>
-            <li>
+            </p>
+            <p>
               <strong>Age:</strong> {props.age}
-            </li>
-            <li>
+            </p>
+            <p>
               <strong>Hobby:</strong> {props.hobby}
-            </li>
-            <li>
+            </p>
+            <p>
               <strong>Bio:</strong> {props.bio}
-            </li>
+            </p>
           </ul>
         </div>
         <button onClick={() => props.addBuddy(props.id)} className="btn btn-info add">

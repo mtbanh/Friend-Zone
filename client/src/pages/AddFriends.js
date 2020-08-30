@@ -78,6 +78,7 @@ const Addfriends = () => {
 
   return (
     <> <LogoutBtn />
+      <div className= "background">
       <Carousel
         swipeable={false}
         draggable={false}
@@ -113,6 +114,7 @@ const Addfriends = () => {
           ))
         }
       </Carousel>
+      </div>
     </>
   )
 }

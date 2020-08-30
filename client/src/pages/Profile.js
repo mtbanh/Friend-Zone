@@ -5,7 +5,7 @@ import API from "../utils/API"
 import ReactFilestack from "filestack-react";
 import LogoutBtn from "../Components/LogoutBtn"
 
-const apiKey = "AXsVOdIjfR3eVPnGtz0CLz"
+const apiKey = "AgWwlpswKRSqvqLbfFZqnz"
 // const client = filestack.init(apiKey)
 // let imgURL = "";
 // const hobbies = []
@@ -86,10 +86,10 @@ class Profile extends Component {
             </div>
             <div>
               <h6 className="upload"></h6>
-                <div className="m-5">              
+                <div className="m-4">              
                 </div>
               </div>
-                <img className="fas fa-portrait fa-9x" alt className= "profilePicture" src={this.state.files} /> 
+                <img alt className= "profilePicture" src={this.state.files}/> 
 
           </div>
          

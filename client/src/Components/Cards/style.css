@@ -1,3 +1,14 @@
-.btn {
-    background: #1606f7
+.card{
+    opacity: .85;
+    margin: .5rem;
+    background-color: rgba(55, 37, 37, 0.721);
+    color: white;
+}
+
+.content {
+    margin-top: 3em;
+}
+
+img {
+    margin-top: 2rem;
 }
