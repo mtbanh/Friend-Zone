@@ -1,160 +1,32 @@
 import React from "react";
-import "./Aboutus.css";
-// import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-// import SignupBtn from "../Components/SignupBtn"
-// import LoginBtn from "../Components/LoginBtn";
+// import "./LandingStyle.css";
+import SignupBtn from "../Components/SignupBtn"
+import LoginBtn from "../Components/LoginBtn";
 
 const AboutUs = () => {
     return (
         <div className="bg">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-sm-6">
+                    <div class="col s12 m6 l3"><p>Aidan</p>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <img src="" />
+                                        <span class="card-title">Aidan Sweeny</span>
+                                    </div>
+                                    <div class="card-content">
+                                        <p>Full stack student UC Berkeley</p>
+                                    </div>
+                                    <div class="card-action">
+                                        <a href="">GitHub</a>
+                                        <a href="">Linkedin</a>
 
-                        <div class="card hovercard">
-                            <div class="cardheader">
-
-                            </div>
-                            <div class="avatar">
-                                <img alt="" src="http://lorempixel.com/100/100/people/9/" />
-                            </div>
-                            <div class="info">
-                                <div class="title">
-                                    <a>Script Eden</a>
+                                    </div>
                                 </div>
-                                <div class="desc">Passionate designer</div>
-                                <div class="desc">Curious developer</div>
-                                <div class="desc">Tech geek</div>
-                            </div>
-                            <div class="bottom">
-                                <a className="btn btn-primary btn-sm" href="">
-                                <i className="fa fa-github" aria-hidden="true"></i>
-                                </a>
-                                <a class="btn btn-danger btn-sm" rel="publisher"
-                                    href="https://plus.google.com/+ahmshahnuralam">
-                                   {/* <><FontAwesomeIcon icon="github" /></> */}
-                                </a>
-                                {/* <a class="btn btn-primary btn-sm" rel="publisher"
-                                    href="https://plus.google.com/shahnuralam">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                                <a class="btn btn-warning btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam">
-                                    <i class="fa fa-behance"></i>
-                                </a> */}
                             </div>
                         </div>
-
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-
-                        <div class="card hovercard">
-                            <div class="cardheader">
-
-                            </div>
-                            <div class="avatar">
-                                <img alt="" src="http://lorempixel.com/100/100/people/9/" />
-                            </div>
-                            <div class="info">
-                                <div class="title">
-                                    <a target="_blank" href="https://scripteden.com/">Script Eden</a>
-                                </div>
-                                <div class="desc">Passionate designer</div>
-                                <div class="desc">Curious developer</div>
-                                <div class="desc">Tech geek</div>
-                            </div>
-                            <div class="bottom">
-                                <a class="btn btn-primary btn-twitter btn-sm" href="https://twitter.com/webmaniac">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                                <a class="btn btn-danger btn-sm" rel="publisher"
-                                    href="https://plus.google.com/+ahmshahnuralam">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                                <a class="btn btn-primary btn-sm" rel="publisher"
-                                    href="https://plus.google.com/shahnuralam">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                                <a class="btn btn-warning btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam">
-                                    <i class="fa fa-behance"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-
-                        <div class="card hovercard">
-                            <div class="cardheader">
-
-                            </div>
-                            <div class="avatar">
-                                <img alt="" src="http://lorempixel.com/100/100/people/9/" />
-                            </div>
-                            <div class="info">
-                                <div class="title">
-                                    <a target="_blank" href="https://scripteden.com/">Script Eden</a>
-                                </div>
-                                <div class="desc">Passionate designer</div>
-                                <div class="desc">Curious developer</div>
-                                <div class="desc">Tech geek</div>
-                            </div>
-                            <div class="bottom">
-                                <a class="btn btn-primary btn-twitter btn-sm" href="https://twitter.com/webmaniac">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                                <a class="btn btn-danger btn-sm" rel="publisher"
-                                    href="https://plus.google.com/+ahmshahnuralam">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                                <a class="btn btn-primary btn-sm" rel="publisher"
-                                    href="https://plus.google.com/shahnuralam">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                                <a class="btn btn-warning btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam">
-                                    <i class="fa fa-behance"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6">
-
-                        <div class="card hovercard">
-                            <div class="cardheader">
-
-                            </div>
-                            <div class="avatar">
-                                <img alt="" src="http://lorempixel.com/100/100/people/9/" />
-                            </div>
-                            <div class="info">
-                                <div class="title">
-                                    <a target="_blank" href="https://scripteden.com/">Script Eden</a>
-                                </div>
-                                <div class="desc">Passionate designer</div>
-                                <div class="desc">Curious developer</div>
-                                <div class="desc">Tech geek</div>
-                            </div>
-                            <div class="bottom">
-                                <a class="btn btn-primary btn-twitter btn-sm" href="https://twitter.com/webmaniac">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                                <a class="btn btn-danger btn-sm" rel="publisher"
-                                    href="https://plus.google.com/+ahmshahnuralam">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                                <a class="btn btn-primary btn-sm" rel="publisher"
-                                    href="https://plus.google.com/shahnuralam">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                                <a class="btn btn-warning btn-sm" rel="publisher" href="https://plus.google.com/shahnuralam">
-                                    <i class="fa fa-behance"></i>
-                                </a>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div >
@@ -162,4 +34,4 @@ const AboutUs = () => {
     );
 }
 
-export default AboutUs;
+export default Landing;
