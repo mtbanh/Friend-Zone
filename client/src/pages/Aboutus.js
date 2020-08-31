@@ -67,7 +67,7 @@ const AboutUs = () => {
                   <div class="card">
                     <div class="card-body text-center mt-4">
                       <h4 class="card-title">Isaias Del Mundo</h4>
-                      <p class="card-text">Bio</p>
+                      <p class="card-text">I, Isaias Del Mundo, am a full stack developer living in Hayward, California. I have a certiciate in Electronic technology and Automotive technology from College of San Mateo and Wyotech. </p>
                       <ul class="list-inline">
                         <li class="list-inline-item">
                           <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/isaiasdelmundo/">Linkedin
