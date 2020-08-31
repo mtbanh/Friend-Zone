@@ -122,6 +122,11 @@ section .section-title {
 
 #bio{
     color: black;
+    
+}
+
+.card-text{
+    color: black;
 }
 .frontside .card .card-body img {
     width: 120px;
