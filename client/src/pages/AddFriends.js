@@ -70,7 +70,7 @@ const Addfriends = () => {
         console.log(newArray)
         API.updateProfile((newArray), userID)
           .then(function (response) {
-            // window.location.replace("/friends")
+            window.location.replace("/friends")
           })
           .catch(err => console.log(err))
     })

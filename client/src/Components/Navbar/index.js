@@ -26,6 +26,7 @@ class Nav extends React.Component {
                         {/* <Link class="nav-link" to="/addFriends">Add a Friend</Link> */}
                         <Link class="nav-link" to="/Aboutus">About us</Link>
 
+                        <Link class="nav-link" to="/friends">Friendzone</Link>
 
                         <Link class="nav-link" to="/Addfriends">Add Friends</Link>
                         <Link class="nav-link" to="/Chat">Chat</Link>

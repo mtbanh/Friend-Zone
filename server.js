@@ -20,35 +20,9 @@ if (process.env.NODE_ENV === "production") {
 //   res.sendFile(path.join(__dirname, 'build', "index.html"))
 // })
 
-const profileSeed = [{
+const profileSeed = [
+  {
 
-  firstName: "Mai ",
-  lastName: "Banh",
-  age: 37,
-  bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
-  hobby: "Running",
-  files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  friends_list: ""
-},
-{
-  firstName: "Jane ",
-  lastName: "Doe",
-  age: 37,
-  bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
-  hobby: "Running",
-  files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  friends_list: ""
-},
-{
-  firstName: "Abbott ",
-  lastName: "Doe",
-  age: 37,
-  bio: "Subway tile hoodie cloud bread authentic twee 90's tilde williamsburg actually woke disrupt vaporware XOXO craft beer. Viral tofu edison bulb vaporware farm-to-table photo booth offal fixie heirloom cold-pressed seitan godard kale chips. Green juice art party mlkshk taxidermy tattooed. Literally locavore street art pabst, taxidermy ugh fixie austin helvetica PBR&B.",
-  hobby: "Running",
-  files: "https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  friends_list: ""
-},
-{
   firstName: "Laura ",
   lastName: "Friedman",
   age: 32,
@@ -98,7 +72,7 @@ app.use(flash())
 
 app.use(routes);
 
-db.sequelize.sync({ force: false }).then(function () {
+db.sequelize.sync({ force: true }).then(function () {
   db.Profile.bulkCreate(profileSeed);
   app.listen(PORT, function () {
     console.log("Server listening on localhost:" + PORT)
