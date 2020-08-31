@@ -98,7 +98,7 @@ class Profile extends Component {
             <div className="alert alert-info alert-dismissable">
               <a className="panel-close close" data-dismiss="alert">×</a>
               <i className="fa fa-hand-peace-o"></i>
-    Get ready to be freindZoned.
+    Get ready to be friendzone.
         </div>
             <h3>Profile Info</h3>
             <form className="form-horizontal">
@@ -147,7 +147,9 @@ class Profile extends Component {
                   <div className="ui-select">
                     <select name="hobby" value={this.state.hobby} onChange={this.handleInputChange}>
                       <option value="Scale Miniature Building">Scale Miniature Building</option>
-                      <option value="Rock climbing">Rock clmbing</option>
+                      <option value="Rock climbing">Rock climbing</option>
+                      <option value="Surfing">Surfing</option>
+
                       <option value="Swimming">Swimming</option>
                       <option value="Basketball">Basketball</option>
                       <option value="Running">Running</option>

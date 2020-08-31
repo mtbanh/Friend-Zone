@@ -28,15 +28,15 @@ const AboutUs = () => {
                   <div class="card">
                     <div class="card-body text-center mt-4">
                       <h4 class="card-title">Joe Davis</h4>
-                      <p class="card-text">After completing his military service in 2007, Joe began working in corporate customer serivce and sales roles. It was there where he developed a love for helping clients. During the Covid-19 pandemic, Joe developed a new passion for coding. He attended the UC Berkeley Extension Bootcamp and became a Full Stack Developer.</p>
+                      <p class="card-text">After completing his military service in 2007, Joe began working in corporate customer serivce and sales roles. It was there where he developed a love for helping clients. </p>
                       <ul class="list-inline">
                         <li class="list-inline-item">
-                        <a className="social-icon text-s-center" target="_blank" href="https://www.linkedin.com/in/joe-davis-a8380232/">
+                        <a className="social-icon text-s-center" target="_blank" href="https://www.linkedin.com/in/joe-davis-a8380232/">Linkedin
                             <i className="fa fa-linkedin"></i>
                           </a>
                         </li>
                         <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank" href="https://github.com/jdavis3333">
+                          <a class="social-icon text-xs-center" target="_blank" href="https://github.com/jdavis3333">Github
                             <i class="fa fa-github"></i>
                           </a>
                         </li>
@@ -70,12 +70,12 @@ const AboutUs = () => {
                       <p class="card-text">Bio</p>
                       <ul class="list-inline">
                         <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/isaiasdelmundo/">
+                          <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/isaiasdelmundo/">Linkedin
                             <i class="fa fa-linkedin"></i>
                           </a>
                         </li>
                         <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank" href="https://github.com/idelmundo">
+                          <a class="social-icon text-xs-center" target="_blank" href="https://github.com/idelmundo">Github
                             <i class="fa fa-github"></i>
                           </a>
                         </li>
@@ -110,12 +110,12 @@ const AboutUs = () => {
                       <p class="card-text">Bio</p>
                       <ul class="list-inline">
                         <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/banhtmai/">
+                          <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/banhtmai/">Linkedin
                             <i class="fa fa-linkedin"></i>
                           </a>
                         </li>
                         <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank" href="https://github.com/mtbanh">
+                          <a class="social-icon text-xs-center" target="_blank" href="https://github.com/mtbanh">Github
                             <i class="fa fa-github"></i>
                           </a>
                         </li>
@@ -151,12 +151,12 @@ const AboutUs = () => {
                       <p class="card-text">Bio</p>
                       <ul class="list-inline">
                         <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/aidan-sweeny-81075030/">
+                          <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/aidan-sweeny-81075030/">Linkedin
                             <i class="fa fa-linkedin"></i>
                           </a>
                         </li>
                         <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank" href="https://github.com/AidanSweeny">
+                          <a class="social-icon text-xs-center" target="_blank" href="https://github.com/AidanSweeny">Github
                             <i class="fa fa-github"></i>
                           </a>
                         </li>

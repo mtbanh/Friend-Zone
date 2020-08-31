@@ -33,6 +33,7 @@ const Chat = () => {
     const loadChats = () => {
         API.getChats()
             .then(res => {
+                console.log(res)
                 var array = [];
                 for(var i=0; i<res.data.length; i++){
                     if(res.data[i].user1 === userName){
