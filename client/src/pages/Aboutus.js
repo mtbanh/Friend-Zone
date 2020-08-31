@@ -34,4 +34,4 @@ const AboutUs = () => {
     );
 }
 
-export default Landing;
+export default AboutUs;
