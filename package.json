@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+ 
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -50,6 +51,9 @@
     "react-scroll-into-view": "^1.8.2",
     "react-scroll-to-bottom": "^3.0.0",
     "sequelize": "^6.3.4"
+  },
+  "engines": {
+    "node": "12.x"
   },
   "bugs": {
     "url": "https://github.com/mtbanh/Friend-Zone/issues"
