@@ -1,10 +1,9 @@
 import React from "react";
-// import "./LandingStyle.css";
 import SignupBtn from "../Components/SignupBtn"
 import LoginBtn from "../Components/LoginBtn";
+import "./Aboutus.css"
 
 const AboutUs = () => {
-<<<<<<< HEAD
   return (
     <section id="team" class="pb-5">
       <div class="container">
@@ -20,7 +19,7 @@ const AboutUs = () => {
                     <div class="card-body text-center">
                       <p><img class=" img-fluid" src="https://avatars1.githubusercontent.com/u/66157077?s=460&u=77dbf1a297efa27a82dc1f1890f2c76ce746b7e6&v=4" alt="card image" /></p>
                       <h4 class="card-title">Joe</h4>
-                      <p class="card-text">UC Berkeley Full-Stack Coding Boot Camp student.</p>
+                      <p class="card-text" id="bio">UC Berkeley Full-Stack Coding Boot Camp student.</p>
                       {/* <a class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> */}
                     </div>
                   </div>
@@ -59,7 +58,7 @@ const AboutUs = () => {
                     <div class="card-body text-center">
                       <p><img class=" img-fluid" src="https://avatars0.githubusercontent.com/u/64993651?s=460&u=f248062fffd49512914cbf0cfd5b526716dc3324&v=4" alt="card image" /></p>
                       <h4 class="card-title">Isaias</h4>
-                      <p class="card-text">UC Berkeley Full-Stack Coding Boot Camp student.</p>
+                      <p class="card-text" id="bio">UC Berkeley Full-Stack Coding Boot Camp student.</p>
                       {/* <a class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> */}
                     </div>
                   </div>
@@ -99,7 +98,7 @@ const AboutUs = () => {
                     <div class="card-body text-center">
                       <p><img class=" img-fluid" src="https://avatars0.githubusercontent.com/u/65269951?s=460&u=3050f4825c4f57bec363e39d2653ad6b1d0f2104&v=4" alt="card image" /></p>
                       <h4 class="card-title">Mai</h4>
-                      <p class="card-text">UC Berkeley Full-Stack Coding Boot Camp student.</p>
+                      <p class="card-text" id="bio">UC Berkeley Full-Stack Coding Boot Camp student.</p>
                       {/* <a class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> */}
                     </div>
                   </div>
@@ -140,33 +139,8 @@ const AboutUs = () => {
                     <div class="card-body text-center">
                       <p><img class=" img-fluid" src="https://avatars2.githubusercontent.com/u/66136332?s=460&u=56677b63a6e3f5cbe2182637fe8e5cb64897b6e3&v=4" alt="card image" /></p>
                       <h4 class="card-title">Aidan</h4>
-                      <p class="card-text">UC Berkeley Full-Stack Coding Boot Camp student.</p>
+                      <p class="card-text" id="bio">UC Berkeley Full-Stack Coding Boot Camp student.</p>
                       {/* <a class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a> */}
-=======
-    return (
-        <div className="bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col s12 m6 l3"><p>Aidan</p>
-                        <div class="row">
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-image">
-                                        <img src="" />
-                                        <span class="card-title">Aidan Sweeny</span>
-                                    </div>
-                                    <div class="card-content">
-                                        <p>Full stack student UC Berkeley</p>
-                                    </div>
-                                    <div class="card-action">
-                                        <a href="">GitHub</a>
-                                        <a href="">Linkedin</a>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
->>>>>>> d435310f0125593e057f57f9c5eb5277f76c3177
                     </div>
                   </div>
                 </div>
@@ -201,4 +175,4 @@ const AboutUs = () => {
   );
 }
 
-export default Landing;
+export default AboutUs;

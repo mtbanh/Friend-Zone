@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Redirect } from "react-router-dom"
 import Nav from "./Components/Navbar";
-// import Aboutus from "./pages/Aboutus";
+import Aboutus from "./pages/Aboutus";
 import Chat from "./pages/Chat";
 import Landing from "./pages/Landing";
 import NoMatch from "./pages/NoMatch";
@@ -42,9 +42,9 @@ function App() {
             <Route exact path={["/", "/landing"]}>
               <Landing />
             </Route>
-            {/* <Route exact path={"/Aboutus"}>
+            <Route exact path={"/Aboutus"}>
               <Aboutus />
-            </Route> */}
+            </Route>
             <>
               <Route exact path="/login">
                 <Login setUser={setUser} />
