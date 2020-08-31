@@ -10,7 +10,7 @@ const AboutUs = () => {
         <h5 class="section-title h1">OUR TEAM</h5>
         <div class="row">
 
-
+   
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="image-flip" >
               <div class="mainflip flip-0">
@@ -31,8 +31,8 @@ const AboutUs = () => {
                       <p class="card-text">After completing his military service in 2007, Joe began working in corporate customer serivce and sales roles. It was there where he developed a love for helping clients. During the Covid-19 pandemic, Joe developed a new passion for coding. He attended the UC Berkeley Extension Bootcamp and became a Full Stack Developer.</p>
                       <ul class="list-inline">
                         <li class="list-inline-item">
-                          <a class="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/joe-davis-a8380232/">
-                            <i class="fa fa-linkedin"></i>
+                        <a className="social-icon text-s-center" target="_blank" href="https://www.linkedin.com/in/joe-davis-a8380232/">
+                            <i className="fa fa-linkedin"></i>
                           </a>
                         </li>
                         <li class="list-inline-item">
