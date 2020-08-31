@@ -44,7 +44,7 @@ export default {
     return axios.post("api/login", {email, password})
   },
   updateProfile: (friendid, userid) => {
-    console.log(`the friendId is ${friendid}`)
+    console.log(`the friendId is ${friendid[0].id}`)
     return axios.put("api/profile/"+userid , friendid);
   },  
   getUserData: ()=>{

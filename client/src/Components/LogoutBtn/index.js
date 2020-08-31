@@ -10,7 +10,7 @@ class LogoutBtn extends React.Component {
 
     render() {
         return (
-            <Link to ={"Landing"}>
+            <Link to ={"/"}>
             <button
                 type="button"
                 class="btn btn-primary"

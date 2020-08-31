@@ -32,7 +32,8 @@ const Friends = () => {
             user2: friendId
         }
         API.postChat(obj)
-            .then(res =>
+            .then(result =>
+                // console.log(result)
                 window.location.replace("/chat")
             )
     }

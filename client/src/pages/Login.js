@@ -26,9 +26,11 @@ const Login = (props) => {
             API.findUser(userSigninObj)
                 .then(({data: userData}) => {
                     console.log(`data passed to route`)
-                    console.log(ctx)      
+                    // console.log(userData)
+                    // console.log(ctx)      
                     const loggedInUser = {
                         id: userData.id,
+                        name: userData.name
                     }
                     console.log(loggedInUser)
                     setUser(loggedInUser);

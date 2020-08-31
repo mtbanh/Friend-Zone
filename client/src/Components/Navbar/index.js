@@ -27,7 +27,9 @@ class Nav extends React.Component {
                         <Link class="nav-link" to="/Aboutus">About us</Link>
 
 
-                        <Link class="nav-link" to="#">About the project</Link>
+                        <Link class="nav-link" to="/Addfriends">Add Friends</Link>
+                        <Link class="nav-link" to="/Chat">Chat</Link>
+
                         <Link class="nav-link disabled" to="#" tabindex="-1" aria-disabled="true"></Link>
                     </div>
                 </div>
