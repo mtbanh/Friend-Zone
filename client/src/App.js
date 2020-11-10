@@ -19,7 +19,6 @@ import UserContext from "./utils/UserContext/userContext"
 
 function App() {
 
-  // Dumpling code
   // Try to get user from local storage
   let userData = window.localStorage.getItem('user')
   if (userData) userData = JSON.parse(userData)

@@ -2,7 +2,7 @@ var express = require('express')
 var db = require('./models')
 const routes = require("./routes");
 var PORT = process.env.PORT || 3001;
-console.log(`the process.env.port is:`, process.env.PORT)
+// console.log(`the process.env.port is:`, process.env.PORT)
 var session = require("express-session");
 const passport = require("passport")
 // var initializePassport = require("./config/passport");
