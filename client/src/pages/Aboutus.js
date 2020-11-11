@@ -104,7 +104,9 @@ const AboutUs = () => {
                   <div className="card">
                     <div className="card-body text-center mt-4">
                       <h4 className="card-title">Mai Banh</h4>
-                      <p className="card-text">Bio</p>
+                      <p className="card-text">Bootcamp Graduate. Enthusiastic and driven.
+
+</p>
                       <ul className="list-inline">
                         <li className="list-inline-item">
                           <a className="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/banhtmai/">
@@ -140,7 +142,7 @@ const AboutUs = () => {
                   <div className="card">
                     <div className="card-body text-center mt-4">
                       <h4 className="card-title">Aidan Sweeny</h4>
-                      <p className="card-text">Bio</p>
+                      <p className="card-text">Bio coming soon</p>
                       <ul className="list-inline">
                         <li className="list-inline-item">
                           <a className="social-icon text-xs-center" target="_blank" href="https://www.linkedin.com/in/aidan-sweeny-81075030/">Linkedin
