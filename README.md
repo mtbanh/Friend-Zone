@@ -1,6 +1,6 @@
 # Friend-Zone
 
-![gif demo](client\app-features.gif)
+![gif demo](./app-features.gif)
 
 ## Table of Content
 - Objective
