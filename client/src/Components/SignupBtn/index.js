@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import "../loginBtn/style.css";
 import {Link} from "react-router-dom";
 
 class SignupBtn extends React.Component {
@@ -10,7 +10,7 @@ class SignupBtn extends React.Component {
             <button
                 type="button"
                 class="btn btn-primary btn-lg"
-                id="SignupBtn">
+                id="loginBtn">
                 Sign-up
             </button>
             </Link>
