@@ -1,5 +1,5 @@
 import React from "react";
-import "../loginBtn/style.css";
+import "../LoginBtn/style.css";
 import {Link} from "react-router-dom";
 
 class SignupBtn extends React.Component {
