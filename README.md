@@ -1,6 +1,6 @@
 # Friend-Zone
 
-![gif demo]()
+![gif demo](client\app-features.gif)
 
 ## Table of Content
 - Objective
@@ -33,16 +33,44 @@ Then open in your preferred text editor:
 
 ## Code Highlight
 Database code snippet
+The code below highlight the format that the Sequelize library use to store information. We created tables for the user credentials, user profile, and the chat history that are initiate between two users. This particular snippet allows us to store what the specific user has type so that we can retrieve it to display.
 
-![code screenshot]()
-
-animation 
-
-![code screenshot]()
-
-storyline code 
-
-![code screenshot]()
+```js
+module.exports = function (sequelize, DataTypes) {
+    var ChatTransaction = sequelize.define("ChatTransaction", {
+        text: DataTypes.STRING,
+        userID: DataTypes.STRING,
+        timeStamp: {
+            type: DataTypes.STRING,
+            defaultValue: moment().format("LLLL")
+        }
+    })
+    ChatTransaction.associate = function (models) {
+        ChatTransaction.belongsTo(models.Chat, { foreignKey: {allowNull:false}})
+    }
+```
+Private and Public Route
+This is a short snippet of code that we used to define who are allow to see what content. React context allow us to provide the verified user information to the sites that are defined as private and React will display the page; otherwise, the unverified user may only see the home page. 
+```js
+ <UserContext.Provider value={user} >
+      {console.log(user)}
+      <Router>
+        <div>
+          <Nav />
+          <Switch>
+            <Route exact path={"/"}>
+              <Landing />
+            </Route>
+              {user && Object.keys(user).length && 
+                <>
+                <Route exact path="/profile">
+                  <Profile />
+                </Route>
+               
+                </>
+              }
+            </>
+```
 
 
 
@@ -61,26 +89,20 @@ storyline code
 
 
 ## Authors 
-### [Aidan](https://github.com/aidansweeny)
-- [LinkedIn]()
-- [Portfolio]( )
-- [Highlighted-Work]( )
-- email: 
+### Aidan
+- [Github](https://github.com/aidansweeny)
+- [LinkedIn](https://www.linkedin.com/in/aidan-sweeny-81075030/)
 
-### [Mai](https://github.com/mtbanh)
+### Mai
+- [Github](https://github.com/mtbanh)
 - [LinkedIn](https://www.linkedin.com/in/banhtmai/)
-- [Portfolio]()
-- [Highlighted-Work]()
-- email: banhtmai@gmail.com
 
-### [Isaias](https://github.com/idelmundo)
-- [LinkedIn]( )
-- [Portfolio]( )
-- [Highlighted-Work]( )
-- email: 
 
-### [Joe](https://github.com/jdavis3333)
-- [LinkedIn]()
-- [Portfolio]()
-- [Highlighted-Work]()
-- email: 
+### Isaias
+- [Github](https://github.com/idelmundo)
+- [LinkedIn](https://www.linkedin.com/in/isaiasdelmundo/)
+
+
+### Joe
+- [Github](https://github.com/jdavis3333)
+- [LinkedIn](https://www.linkedin.com/in/joe-davis-a8380232/)

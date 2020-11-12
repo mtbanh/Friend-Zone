@@ -22,22 +22,12 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING(2000)
         },
        
-       
         files:{
             type: DataTypes.JSON(5000)        
         },
         friends_list:{
             type: DataTypes.JSON(5000)
         }
-        // friends_list:{
-        //     type: DataTypes.STRING(4)
-        // },
-        
-        
-        // gender: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
-        // },
        
        
        
