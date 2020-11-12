@@ -8,7 +8,7 @@ class LoginBtn extends React.Component {
             <Link to={"login"}>
                 <button
                     type="button"
-                    class="btn btn-primary btn-lg"
+                    class="btn btn-lg"
                     id="loginBtn">
                     Login
             </button>
