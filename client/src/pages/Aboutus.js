@@ -1,6 +1,6 @@
 import React from "react";
-import SignupBtn from "../Components/SignupBtn"
-import LoginBtn from "../Components/LoginBtn";
+// import SignupBtn from "../Components/SignupBtn"
+// import LoginBtn from "../Components/LoginBtn";
 import "./Aboutus.css"
 
 const AboutUs = () => {
